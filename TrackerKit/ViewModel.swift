@@ -21,15 +21,33 @@ public class ViewModel:NSObject {
         self.callback = callback
     }
     
-    public func hi()->String {
-        return "hi"
+    public func didTap(itemCategory:ItemCategory) {
+        let newItem = Item(itemCategory: itemCategory, date: Date())
+        print("Add \(newItem)")
+        state.items.append(newItem)
+        Storage.save(state: state)
+    }
+    
+    public func shouldRestore() {
+           if let savedState = Storage.load() {
+               state = savedState
+               print("Loaded State \(state)")
+           } else {
+               state = initialState()
+               print("Initial State \(state)")
+           }
+    }
+    
+    func initialState()->State {
+        let initialState = State(items: [])
+        return initialState
     }
     
 }
 
 func allItems()->[Item] {
     let allItems:[Item] = [
-        Item(title:"🥤", date:Date()),
-        Item(title:"🥪", date:Date())]
+        Item(itemCategory:.drink, date:Date()),
+        Item(itemCategory:.meal, date:Date())]
     return allItems
 }

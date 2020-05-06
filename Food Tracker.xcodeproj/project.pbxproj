@@ -25,6 +25,7 @@
 		89A2095424630EBD00E2914A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095024630EBD00E2914A /* Item.swift */; };
 		89A2095524630EBD00E2914A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095124630EBD00E2914A /* State.swift */; };
 		89A2095624630EBD00E2914A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095224630EBD00E2914A /* Storage.swift */; };
+		89A209582463192400E2914A /* ItemEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A209572463192400E2914A /* ItemEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		89A2095024630EBD00E2914A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		89A2095124630EBD00E2914A /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		89A2095224630EBD00E2914A /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		89A209572463192400E2914A /* ItemEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntryViewController.swift; sourceTree = "<group>"; };
+		89A209592463232F00E2914A /* Food Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Tracker.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,10 +144,12 @@
 		89A209202463039A00E2914A /* Food Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				89A209592463232F00E2914A /* Food Tracker.entitlements */,
 				89A209212463039A00E2914A /* AppDelegate.swift */,
 				89A209232463039A00E2914A /* SceneDelegate.swift */,
 				89A209252463039A00E2914A /* ViewController.swift */,
 				89A209272463039A00E2914A /* Main.storyboard */,
+				89A209572463192400E2914A /* ItemEntryViewController.swift */,
 				89A209332463084E00E2914A /* ItemTableViewController.swift */,
 				89A2092A2463039D00E2914A /* Assets.xcassets */,
 				89A2092C2463039D00E2914A /* LaunchScreen.storyboard */,
@@ -292,9 +297,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				89A208AE2462E96E00E2914A /* Today Widget */,
 				89A2091E2463039A00E2914A /* Food Tracker */,
 				89A2094224630EA200E2914A /* TrackerKit */,
+				89A208AE2462E96E00E2914A /* Today Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -342,6 +347,7 @@
 			files = (
 				89A209262463039A00E2914A /* ViewController.swift in Sources */,
 				89A209222463039A00E2914A /* AppDelegate.swift in Sources */,
+				89A209582463192400E2914A /* ItemEntryViewController.swift in Sources */,
 				89A209342463084E00E2914A /* ItemTableViewController.swift in Sources */,
 				89A209242463039A00E2914A /* SceneDelegate.swift in Sources */,
 			);
@@ -444,6 +450,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Food Tracker/Food Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DNKZNVGEK5;
 				INFOPLIST_FILE = "Food Tracker/Info.plist";
@@ -463,6 +470,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Food Tracker/Food Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DNKZNVGEK5;
 				INFOPLIST_FILE = "Food Tracker/Info.plist";
@@ -480,6 +488,7 @@
 		89A2094D24630EA200E2914A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -509,6 +518,7 @@
 		89A2094E24630EA200E2914A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

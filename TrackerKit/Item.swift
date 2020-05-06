@@ -8,17 +8,31 @@
 
 import Foundation
 
+public enum ItemCategory:Int, Codable, CustomStringConvertible {
+    case drink
+    case sweets
+    case meal
+    
+    public var description: String {
+        switch self {
+        case .drink: return "🥤"
+        case .sweets: return "🍭"
+        case .meal: return "🥪"
+        }
+    }
+}
+
 public struct Item:Codable, CustomDebugStringConvertible {
-    public let title:String
+    public let itemCategory:ItemCategory
     public var createDate:Date
     
-    init(title: String,
+    init(itemCategory: ItemCategory,
         date: Date) {
-        self.title = title
+        self.itemCategory = itemCategory
         self.createDate = date
     }
     
     public var debugDescription: String {
-        return "\(createDate) \(title)"
+        return "\(createDate) \(itemCategory)"
     }
 }
