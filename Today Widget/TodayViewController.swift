@@ -8,12 +8,18 @@
 
 import UIKit
 import NotificationCenter
+import TrackerKit
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
+    var viewModel:ViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viewModel = ViewModel(callback: { [unowned self] state in
+            print("\(state)")
+        })
+        print("\(viewModel.state)")
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
