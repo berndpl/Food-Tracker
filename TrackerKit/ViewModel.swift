@@ -22,25 +22,31 @@ public class ViewModel:NSObject {
         self.callback = callback
     }
     
-    public func didDismissEntry() {
-        //shouldRestore()
-    }
-    
     public func didTap(itemCategory:ItemCategory) {
         let newItem = Item(itemCategory: itemCategory, date: Date())
         print("Add \(newItem)")
         state.items.append(newItem)
         Storage.save(state: state)
-        shouldRestore()
+        shouldReload()
+    }
+    
+    public func didTapDeleteItem(item:Int, row:Int) {
+        let itemToRemove = state.itemSections()[item][row]
+        print("Delete Item \(item) Row \(row) Item \(itemToRemove)")
+        print("BEFORE \(state.items.count)")
+        state.items.removeAll(where: {$0.id == itemToRemove.id})
+        print("AFTER \(state.items.count)")
+        Storage.save(state: state)
+        shouldReload()
     }
     
     public func didTapDeleteAll() {
         let emptyState = State(items: [])
         Storage.save(state: emptyState)
-        shouldRestore()
+        shouldReload()
     }
     
-    public func shouldRestore() {
+    public func shouldReload() {
            if let savedState = Storage.load() {
                state = savedState
                print("Loaded State \(state)")

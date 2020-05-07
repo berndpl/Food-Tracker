@@ -19,24 +19,34 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hzj-fv-EKN">
                                 <rect key="frame" x="40" y="148" width="334" height="100.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-lj-KuW">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-ne-vBk">
                                         <rect key="frame" x="0.0" y="0.0" width="100.5" height="100.5"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-lj-KuW">
+                                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="100.5"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                <state key="normal" title="🍭"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didTapSweets:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mif-Fg-vVX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="5dc-lj-KuW" secondAttribute="height" multiplier="1:1" id="2F0-EV-74M"/>
+                                            <constraint firstItem="5dc-lj-KuW" firstAttribute="leading" secondItem="cO3-ne-vBk" secondAttribute="leading" id="1fc-nr-ORk"/>
+                                            <constraint firstAttribute="trailing" secondItem="5dc-lj-KuW" secondAttribute="trailing" id="7ru-5l-4s4"/>
+                                            <constraint firstAttribute="bottom" secondItem="5dc-lj-KuW" secondAttribute="bottom" id="KIw-sJ-8Dw"/>
+                                            <constraint firstAttribute="width" secondItem="cO3-ne-vBk" secondAttribute="height" multiplier="1:1" id="Tdu-6J-bTM"/>
+                                            <constraint firstItem="5dc-lj-KuW" firstAttribute="top" secondItem="cO3-ne-vBk" secondAttribute="top" id="fLE-ck-sFV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                        <state key="normal" title="🍭"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="didTapSweets:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mif-Fg-vVX"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4z-wx-7PG">
                                         <rect key="frame" x="116.5" y="0.0" width="101" height="100.5"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +89,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                                 <items>
                                     <navigationItem title="I just got a…" id="A0O-t6-6N7">
-                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="rJV-kc-6Nc"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="rJV-kc-6Nc">
+                                            <connections>
+                                                <action selector="didTapDone:" destination="BYZ-38-t0r" id="Ojc-vf-5Ii"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -99,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3396" y="128"/>
+            <point key="canvasLocation" x="3395.652173913044" y="127.90178571428571"/>
         </scene>
         <!--Food-->
         <scene sceneID="I2V-h9-Lit">
@@ -165,12 +179,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Food Diary" id="lpP-Vc-hpC">
-                        <barButtonItem key="leftBarButtonItem" title="Delete All" id="P95-Ei-hIl">
+                        <barButtonItem key="leftBarButtonItem" title="Delete All" image="trash.fill" catalog="system" id="P95-Ei-hIl">
                             <connections>
                                 <action selector="didTapDeleteAll:" destination="Cpc-9w-UGc" id="4O9-5l-MRy"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add Item" image="plus" catalog="system" id="KD4-lV-7Co">
+                        <barButtonItem key="rightBarButtonItem" title="Add Item" image="plus.circle.fill" catalog="system" id="KD4-lV-7Co">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" identifier="showEntry" modalPresentationStyle="formSheet" id="kjx-TK-bAt"/>
                             </connections>
@@ -201,6 +215,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
     </resources>
 </document>

@@ -27,11 +27,13 @@ class EntryViewController:UIViewController {
         viewModel.didTap(itemCategory:ItemCategory.drink)
         dismiss()
     }
+    @IBAction func didTapDone(_ sender: Any) {
+        dismiss()
+    }
     
     func dismiss() {
         self.dismiss(animated: true) {
             print("Dismissing")
-            //self.viewModel.didDismissEntry()
         }
     }
     

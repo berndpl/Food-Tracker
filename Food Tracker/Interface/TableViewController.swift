@@ -24,18 +24,18 @@ class TableViewController:UITableViewController {
         })
         print("\(viewModel.state)")
         //self.tableView.delegate = self
-        shouldRestore()
-        NotificationCenter.default.addObserver(self, selector: #selector(shouldRestore), name: UIApplication.willEnterForegroundNotification, object: nil)
+        shouldReload()
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldReload), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     @IBAction func didTapCheck(_ sender: Any) {
-        shouldRestore()
+        shouldReload()
         self.tableView.reloadData()
         print("Current state \(viewModel.state)")
     }
     
-    @objc func shouldRestore() {
-        viewModel.shouldRestore()
+    @objc func shouldReload() {
+        viewModel.shouldReload()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +79,7 @@ class TableViewController:UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("Edit \(editingStyle) \(indexPath)")
         if editingStyle == .delete {
-            //viewModel.didDeleteMemo(indexPath:indexPath)
+            viewModel.didTapDeleteItem(item:indexPath.item, row:indexPath.row)
             //tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
