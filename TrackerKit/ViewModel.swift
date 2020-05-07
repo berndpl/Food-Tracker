@@ -28,6 +28,11 @@ public class ViewModel:NSObject {
         Storage.save(state: state)
     }
     
+    public func didTapDeleteAll() {
+        let emptyState = State(items: [])
+        Storage.save(state: emptyState)
+    }
+    
     public func shouldRestore() {
            if let savedState = Storage.load() {
                state = savedState

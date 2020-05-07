@@ -15,4 +15,11 @@ public struct State:Codable, CustomDebugStringConvertible {
         return "[State] Items \(items.count)"
     }
     
+    public func countLabel(itemCategory:ItemCategory)->String {
+        let countedItem = items.filter { (item:Item) -> Bool in
+            return item.itemCategory == itemCategory
+        }.count
+        return ("\(countedItem)")
+    }
+    
 }

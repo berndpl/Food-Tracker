@@ -15,14 +15,23 @@ class ItemEntryViewController:UIViewController {
     
     @IBAction func didTapSweets(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.sweets)
+        self.dismiss(animated: true) {
+            print("dmissing")
+        }
     }
     
     @IBAction func didTapMeal(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.meal)
+        self.dismiss(animated: true) {
+            print("dmissing")
+        }
     }
     
     @IBAction func didTapDrink(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.drink)
+        self.dismiss(animated: true) {
+            print("dmissing")
+        }
     }
     
     override func viewDidLoad() {

@@ -15,22 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="0.0" y="44" width="320" height="66"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qhg-7X-Pd4">
                                 <rect key="frame" x="8" y="0.0" width="304" height="110"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gfj-zd-jK7">
-                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="110"/>
+                                        <rect key="frame" x="0.0" y="10" width="90.5" height="90.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tq8-rc-zR8">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="90.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="68"/>
                                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Tq8-rc-zR8" secondAttribute="height" multiplier="1:1" id="qbu-cF-lpW"/>
+                                                    <constraint firstAttribute="width" secondItem="Tq8-rc-zR8" secondAttribute="height" multiplier="4:3" id="qbu-cF-lpW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <state key="normal" title="🍭"/>
@@ -45,7 +40,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZL-3b-fwD">
-                                                <rect key="frame" x="0.0" y="98.5" width="90.5" height="11.5"/>
+                                                <rect key="frame" x="0.0" y="76" width="90.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -53,13 +48,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vYz-QQ-cNj">
-                                        <rect key="frame" x="106.5" y="0.0" width="91" height="110"/>
+                                        <rect key="frame" x="106.5" y="10" width="91" height="90.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WF-Da-nPw">
-                                                <rect key="frame" x="0.0" y="0.0" width="91" height="90.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="68"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="8WF-Da-nPw" secondAttribute="height" multiplier="1:1" id="CFv-Y9-MVw"/>
+                                                    <constraint firstAttribute="width" secondItem="8WF-Da-nPw" secondAttribute="height" multiplier="4:3" id="CFv-Y9-MVw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <state key="normal" title="🥪"/>
@@ -74,7 +69,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1c-cd-EPX">
-                                                <rect key="frame" x="0.0" y="98.5" width="91" height="11.5"/>
+                                                <rect key="frame" x="0.0" y="76" width="91" height="14.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -82,13 +77,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HpI-33-NEe">
-                                        <rect key="frame" x="213.5" y="0.0" width="90.5" height="110"/>
+                                        <rect key="frame" x="213.5" y="10" width="90.5" height="90.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFD-P9-63R">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="90.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="68"/>
                                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="wFD-P9-63R" secondAttribute="height" multiplier="1:1" id="xQf-UE-mKE"/>
+                                                    <constraint firstAttribute="width" secondItem="wFD-P9-63R" secondAttribute="height" multiplier="4:3" id="xQf-UE-mKE"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <state key="normal" title="🥤"/>
@@ -103,7 +98,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeF-Bi-pcU">
-                                                <rect key="frame" x="0.0" y="98.5" width="90.5" height="11.5"/>
+                                                <rect key="frame" x="0.0" y="76" width="90.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -114,14 +109,10 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="GcN-lo-r42" secondAttribute="bottom" symbolic="YES" id="0Q0-KW-PJ6"/>
                             <constraint firstItem="qhg-7X-Pd4" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="5WD-9c-G5K"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" symbolic="YES" id="6Vq-gs-PHe"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="qhg-7X-Pd4" secondAttribute="trailing" constant="8" id="7LC-R9-34v"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" symbolic="YES" id="L8K-9R-egU"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="qhg-7X-Pd4" secondAttribute="bottom" id="avn-rz-Vvn"/>
                             <constraint firstItem="qhg-7X-Pd4" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="f01-SL-tAa"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" symbolic="YES" id="mYS-Cv-VNx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>

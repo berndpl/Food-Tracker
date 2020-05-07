@@ -12,7 +12,6 @@
 		89A208B82462E96E00E2914A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A208B62462E96E00E2914A /* MainInterface.storyboard */; };
 		89A209222463039A00E2914A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A209212463039A00E2914A /* AppDelegate.swift */; };
 		89A209242463039A00E2914A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A209232463039A00E2914A /* SceneDelegate.swift */; };
-		89A209262463039A00E2914A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A209252463039A00E2914A /* ViewController.swift */; };
 		89A209292463039A00E2914A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A209272463039A00E2914A /* Main.storyboard */; };
 		89A2092B2463039D00E2914A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A2092A2463039D00E2914A /* Assets.xcassets */; };
 		89A2092E2463039D00E2914A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A2092C2463039D00E2914A /* LaunchScreen.storyboard */; };
@@ -26,6 +25,7 @@
 		89A2095524630EBD00E2914A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095124630EBD00E2914A /* State.swift */; };
 		89A2095624630EBD00E2914A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095224630EBD00E2914A /* Storage.swift */; };
 		89A209582463192400E2914A /* ItemEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A209572463192400E2914A /* ItemEntryViewController.swift */; };
+		89A2095B2463357100E2914A /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095A2463357100E2914A /* ItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8986E9EE2463A17A0035C940 /* Today Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Today Widget.entitlements"; sourceTree = "<group>"; };
 		89A208AF2462E96E00E2914A /* Today Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Today Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A208B12462E96E00E2914A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		89A208B42462E96E00E2914A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		89A2095224630EBD00E2914A /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		89A209572463192400E2914A /* ItemEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntryViewController.swift; sourceTree = "<group>"; };
 		89A209592463232F00E2914A /* Food Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Tracker.entitlements"; sourceTree = "<group>"; };
+		89A2095A2463357100E2914A /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		89A208B32462E96E00E2914A /* Today Widget */ = {
 			isa = PBXGroup;
 			children = (
+				8986E9EE2463A17A0035C940 /* Today Widget.entitlements */,
 				89A208B42462E96E00E2914A /* TodayViewController.swift */,
 				89A208B62462E96E00E2914A /* MainInterface.storyboard */,
 				89A208B92462E96E00E2914A /* Info.plist */,
@@ -149,8 +152,9 @@
 				89A209232463039A00E2914A /* SceneDelegate.swift */,
 				89A209252463039A00E2914A /* ViewController.swift */,
 				89A209272463039A00E2914A /* Main.storyboard */,
-				89A209572463192400E2914A /* ItemEntryViewController.swift */,
 				89A209332463084E00E2914A /* ItemTableViewController.swift */,
+				89A209572463192400E2914A /* ItemEntryViewController.swift */,
+				89A2095A2463357100E2914A /* ItemTableViewCell.swift */,
 				89A2092A2463039D00E2914A /* Assets.xcassets */,
 				89A2092C2463039D00E2914A /* LaunchScreen.storyboard */,
 				89A2092F2463039D00E2914A /* Info.plist */,
@@ -345,10 +349,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89A209262463039A00E2914A /* ViewController.swift in Sources */,
 				89A209222463039A00E2914A /* AppDelegate.swift in Sources */,
 				89A209582463192400E2914A /* ItemEntryViewController.swift in Sources */,
 				89A209342463084E00E2914A /* ItemTableViewController.swift in Sources */,
+				89A2095B2463357100E2914A /* ItemTableViewCell.swift in Sources */,
 				89A209242463039A00E2914A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +414,7 @@
 		89A208BE2462E96E00E2914A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Today Widget/Today Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DNKZNVGEK5;
 				INFOPLIST_FILE = "Today Widget/Info.plist";
@@ -429,6 +434,7 @@
 		89A208BF2462E96E00E2914A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Today Widget/Today Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DNKZNVGEK5;
 				INFOPLIST_FILE = "Today Widget/Info.plist";

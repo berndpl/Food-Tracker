@@ -33,15 +33,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ViewModel(callback: { [unowned self] state in
-//            self.drinksLabel = //state.items.today()
-//            print("\(state)")
-//            
-//            if let drinksCount = state.items.filter { (item:Item) -> Bool in
-//                return item == .drink
-//            }.count
-            
+            self.drinksLabel.text = state.countLabel(itemCategory: .drink)
+            self.mealLabel.text = state.countLabel(itemCategory: .meal)
+            self.sweetsLabel.text = state.countLabel(itemCategory: .sweets)
         })
+        
         print("\(viewModel.state)")
+        viewModel.shouldRestore()
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

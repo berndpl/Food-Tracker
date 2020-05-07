@@ -44,6 +44,7 @@ public class Storage {
         // Save
         do {
             try jsonString?.write(to: Storage.filePath(), atomically: false, encoding: .utf8)
+            print("Saved \(state)")
         }
         catch { fatalError("Error Writing File") }
     }
