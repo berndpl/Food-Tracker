@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b9i-cM-dBO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Entry View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController modalPresentationStyle="formSheet" id="BYZ-38-t0r" customClass="EntryViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bPN-S4-bFV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hzj-fv-EKN">
+                                <rect key="frame" x="40" y="148" width="334" height="100.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-lj-KuW">
+                                        <rect key="frame" x="0.0" y="0.0" width="100.5" height="100.5"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5dc-lj-KuW" secondAttribute="height" multiplier="1:1" id="2F0-EV-74M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <state key="normal" title="🍭"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapSweets:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mif-Fg-vVX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4z-wx-7PG">
+                                        <rect key="frame" x="116.5" y="0.0" width="101" height="100.5"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="z4z-wx-7PG" secondAttribute="height" multiplier="1:1" id="WvJ-oh-CJ2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <state key="normal" title="🥤"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapDrink:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LLz-k4-eVO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBj-Wx-0nL">
+                                        <rect key="frame" x="233.5" y="0.0" width="100.5" height="100.5"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rBj-Wx-0nL" secondAttribute="height" multiplier="1:1" id="dbp-7M-L65"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <state key="normal" title="🥪"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapMeal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aje-aI-hi6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ro6-3z-WIl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                <items>
+                                    <navigationItem title="I just got a…" id="A0O-t6-6N7">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="rJV-kc-6Nc"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PSc-PT-jt4" firstAttribute="trailing" secondItem="Hzj-fv-EKN" secondAttribute="trailing" constant="40" id="605-X3-2CK"/>
+                            <constraint firstItem="Ro6-3z-WIl" firstAttribute="top" secondItem="PSc-PT-jt4" secondAttribute="top" id="76i-Db-6tI"/>
+                            <constraint firstItem="Hzj-fv-EKN" firstAttribute="top" secondItem="Ro6-3z-WIl" secondAttribute="bottom" constant="40" id="Kj5-yC-8sO"/>
+                            <constraint firstItem="Hzj-fv-EKN" firstAttribute="leading" secondItem="PSc-PT-jt4" secondAttribute="leading" constant="40" id="Vzn-66-5xW"/>
+                            <constraint firstAttribute="trailing" secondItem="Ro6-3z-WIl" secondAttribute="trailing" id="bJs-TR-CUb"/>
+                            <constraint firstItem="Ro6-3z-WIl" firstAttribute="leading" secondItem="PSc-PT-jt4" secondAttribute="leading" id="inI-GO-YPC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PSc-PT-jt4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9mU-Jr-dph"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3396" y="128"/>
+        </scene>
+        <!--Food-->
+        <scene sceneID="I2V-h9-Lit">
+            <objects>
+                <tableViewController title="Food" id="Cpc-9w-UGc" customClass="TableViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Anr-Xf-I1y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" id="T2O-dO-GYY">
+                            <rect key="frame" x="0.0" y="128.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your items here or using the Today Widget" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWd-2f-a3X">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="trackedItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackedItem" id="e6M-dl-3ci" customClass="ItemTableViewCell" customModule="Food_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.5" width="374" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6M-dl-3ci" id="eJI-6y-v8c">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mwx-Sw-dCy">
+                                            <rect key="frame" x="12" y="8" width="141" height="39"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥤" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQG-8i-bek">
+                                                    <rect key="frame" x="0.0" y="0.5" width="36" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today, 14:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1d-tw-vAT">
+                                                    <rect key="frame" x="44" y="9.5" width="97" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mwx-Sw-dCy" firstAttribute="top" secondItem="eJI-6y-v8c" secondAttribute="top" constant="8" id="0WD-cn-7nH"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mwx-Sw-dCy" secondAttribute="bottom" constant="8" id="4KC-Wj-1nd"/>
+                                        <constraint firstItem="Mwx-Sw-dCy" firstAttribute="leading" secondItem="eJI-6y-v8c" secondAttribute="leading" constant="12" id="8vu-UM-GUk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="H1d-tw-vAT" id="t7V-GG-kmO"/>
+                                    <outlet property="itemCategoryLabel" destination="DQG-8i-bek" id="5cQ-fn-05k"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Cpc-9w-UGc" id="uFC-HA-nyy"/>
+                            <outlet property="delegate" destination="Cpc-9w-UGc" id="ecx-UJ-iBe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Food Diary" id="lpP-Vc-hpC">
+                        <barButtonItem key="leftBarButtonItem" title="Delete All" id="P95-Ei-hIl">
+                            <connections>
+                                <action selector="didTapDeleteAll:" destination="Cpc-9w-UGc" id="4O9-5l-MRy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add Item" image="plus" catalog="system" id="KD4-lV-7Co">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showEntry" modalPresentationStyle="formSheet" id="kjx-TK-bAt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMK-VH-95J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2518.840579710145" y="127.90178571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O1S-8F-oVf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b9i-cM-dBO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cxH-3O-iPb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cpc-9w-UGc" kind="relationship" relationship="rootViewController" id="ltu-bb-lk7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOp-zA-kph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608.6956521739132" y="127.90178571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
+</document>

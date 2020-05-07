@@ -13,6 +13,7 @@ public class ViewModel:NSObject {
     
     public var state: State = State(items: allItems()) {
         didSet {
+            print("Callback!")
             callback(state)
         }
     }
@@ -21,16 +22,22 @@ public class ViewModel:NSObject {
         self.callback = callback
     }
     
+    public func didDismissEntry() {
+        //shouldRestore()
+    }
+    
     public func didTap(itemCategory:ItemCategory) {
         let newItem = Item(itemCategory: itemCategory, date: Date())
         print("Add \(newItem)")
         state.items.append(newItem)
         Storage.save(state: state)
+        shouldRestore()
     }
     
     public func didTapDeleteAll() {
         let emptyState = State(items: [])
         Storage.save(state: emptyState)
+        shouldRestore()
     }
     
     public func shouldRestore() {

@@ -9,7 +9,7 @@
 import UIKit
 import TrackerKit
 
-class ItemTableViewController:UITableViewController {
+class TableViewController:UITableViewController {
     var viewModel:ViewModel!
     
     @IBAction func didTapDeleteAll(_ sender: Any) {
@@ -43,33 +43,52 @@ class ItemTableViewController:UITableViewController {
         print("Will Appear")
     }
     
+    // MARK: - Show Entry View Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEntry" {
+            let entry = segue.destination as! EntryViewController
+            //let entry = navigationController.viewControllers.first as! EntryViewController
+            entry.viewModel = viewModel
+        }
+    }
+    
     // MARK: - Table view data source
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if viewModel.state.itemSections().count > 0 {
+            let itemSection:[Item] = viewModel.state.itemSections()[section]
+            return "\(itemSection.first!.createDate.shortRelative)"
+        } else {
+            return nil
+        }
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return viewModel.state.itemSections().count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.state.items.count
+        return viewModel.state.itemSections()[section].count
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        print("Edit \(editingStyle) \(indexPath)")
-//        if editingStyle == .delete {
-//            viewModel.didDeleteMemo(indexPath:indexPath)
-//            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        print("Edit \(editingStyle) \(indexPath)")
+        if editingStyle == .delete {
+            //viewModel.didDeleteMemo(indexPath:indexPath)
+            //tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackedItem", for: indexPath) as! ItemTableViewCell
-        let item:Item = viewModel.state.items[indexPath.row]
+        let item:Item = viewModel.state.itemSections()[indexPath.section][indexPath.row] //viewModel.state.items[indexPath.row]
         cell.itemCategoryLabel.text = ("\(item.itemCategory)")
-        cell.dateLabel.text = ("\(item.createDate)")
+        cell.dateLabel.text = item.createDate.shortRelativeWithTime
         cell.item = item
         return cell
     }

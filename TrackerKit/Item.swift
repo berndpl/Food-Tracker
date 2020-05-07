@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ItemCategory:Int, Codable, CustomStringConvertible {
+public enum ItemCategory:Int, Codable, CustomStringConvertible, Hashable {
     case drink
     case sweets
     case meal
@@ -24,12 +24,14 @@ public enum ItemCategory:Int, Codable, CustomStringConvertible {
 
 public struct Item:Codable, CustomDebugStringConvertible {
     public let itemCategory:ItemCategory
-    public var createDate:Date
+    public let createDate:Date
+    public let id:UUID
     
     init(itemCategory: ItemCategory,
         date: Date) {
         self.itemCategory = itemCategory
         self.createDate = date
+        self.id = UUID()
     }
     
     public var debugDescription: String {

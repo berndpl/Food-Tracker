@@ -9,40 +9,34 @@
 import UIKit
 import TrackerKit
 
-class ItemEntryViewController:UIViewController {
+class EntryViewController:UIViewController {
     
     var viewModel:ViewModel!
     
     @IBAction func didTapSweets(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.sweets)
-        self.dismiss(animated: true) {
-            print("dmissing")
-        }
+        dismiss()
     }
     
     @IBAction func didTapMeal(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.meal)
-        self.dismiss(animated: true) {
-            print("dmissing")
-        }
+        dismiss()
     }
     
     @IBAction func didTapDrink(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.drink)
+        dismiss()
+    }
+    
+    func dismiss() {
         self.dismiss(animated: true) {
-            print("dmissing")
+            print("Dismissing")
+            //self.viewModel.didDismissEntry()
         }
     }
     
     override func viewDidLoad() {
         print("Did Load")
-        viewModel = ViewModel(callback: { [unowned self] state in
-            print("\(state)")
-        })
-        print("\(viewModel.state)")
-        
-        shouldRestore()
-        NotificationCenter.default.addObserver(self, selector: #selector(shouldRestore), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +44,4 @@ class ItemEntryViewController:UIViewController {
         print("Will Appear")
     }
     
-    @objc func shouldRestore() {
-        viewModel.shouldRestore()
-    }
 }
