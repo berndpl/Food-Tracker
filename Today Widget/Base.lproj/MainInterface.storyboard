@@ -10,184 +10,85 @@
         <!--Today View Controller-->
         <scene sceneID="cwh-vc-ff4">
             <objects>
-                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Today_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CWQ-xc-EoT">
-                                <rect key="frame" x="16" y="0.0" width="288" height="94"/>
+                                <rect key="frame" x="8" y="0.0" width="304" height="102"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sb1-yZ-sEM">
-                                        <rect key="frame" x="0.0" y="1.5" width="90.5" height="91"/>
+                                        <rect key="frame" x="0.0" y="3" width="96" height="96"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-4F-GYr">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="91"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-4F-GYr" customClass="SnackButton" customModule="Today_Widget">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <state key="normal" title="🍭"/>
                                                 <connections>
-                                                    <action selector="didTapSweets:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="wo3-bc-Rph"/>
+                                                    <action selector="didTapSweets:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="fJ0-BI-ftN"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDV-mk-58E">
-                                                <rect key="frame" x="56.5" y="8" width="26" height="26"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-XL-Yal">
-                                                        <rect key="frame" x="7.5" y="3" width="11.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="B7y-XL-Yal" firstAttribute="centerX" secondItem="gDV-mk-58E" secondAttribute="centerX" id="2ak-7K-AdX"/>
-                                                    <constraint firstAttribute="width" constant="26" id="SRb-CS-ijA"/>
-                                                    <constraint firstItem="B7y-XL-Yal" firstAttribute="centerY" secondItem="gDV-mk-58E" secondAttribute="centerY" id="ba4-Np-6Ic"/>
-                                                    <constraint firstAttribute="width" secondItem="gDV-mk-58E" secondAttribute="height" multiplier="1:1" id="sZw-rb-f1h"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="13"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="gcK-4F-GYr" secondAttribute="trailing" id="EMB-Ys-8wS"/>
-                                            <constraint firstItem="gDV-mk-58E" firstAttribute="top" secondItem="Sb1-yZ-sEM" secondAttribute="top" constant="8" id="FgO-r4-J3I"/>
                                             <constraint firstItem="gcK-4F-GYr" firstAttribute="leading" secondItem="Sb1-yZ-sEM" secondAttribute="leading" id="Iph-Km-qXX"/>
                                             <constraint firstAttribute="width" secondItem="Sb1-yZ-sEM" secondAttribute="height" multiplier="1:1" id="XEB-Fy-MKf"/>
                                             <constraint firstAttribute="bottom" secondItem="gcK-4F-GYr" secondAttribute="bottom" id="d0G-YP-IVP"/>
                                             <constraint firstItem="gcK-4F-GYr" firstAttribute="top" secondItem="Sb1-yZ-sEM" secondAttribute="top" id="ras-NU-UWG"/>
-                                            <constraint firstAttribute="trailing" secondItem="gDV-mk-58E" secondAttribute="trailing" constant="8" id="u2f-GK-lZl"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="to6-hT-zZ7">
-                                        <rect key="frame" x="98.5" y="1.5" width="91" height="91"/>
+                                        <rect key="frame" x="104" y="3" width="96" height="96"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUL-s5-Ims">
-                                                <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUL-s5-Ims" customClass="SnackButton" customModule="Today_Widget">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <state key="normal" title="🥪"/>
                                                 <connections>
-                                                    <action selector="didTapMeal:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="CC4-r8-pwh"/>
+                                                    <action selector="didTapMeal:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="E6X-vh-OuH"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USf-GV-K7C">
-                                                <rect key="frame" x="57" y="8" width="26" height="26"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naL-Um-7ws">
-                                                        <rect key="frame" x="7" y="3" width="11.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="26" id="2ag-ZI-Dhv"/>
-                                                    <constraint firstItem="naL-Um-7ws" firstAttribute="centerY" secondItem="USf-GV-K7C" secondAttribute="centerY" id="FMn-vB-cAh"/>
-                                                    <constraint firstAttribute="width" secondItem="USf-GV-K7C" secondAttribute="height" multiplier="1:1" id="Jo2-kr-yUl"/>
-                                                    <constraint firstItem="naL-Um-7ws" firstAttribute="centerX" secondItem="USf-GV-K7C" secondAttribute="centerX" id="w3S-ad-CwL"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="13"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="to6-hT-zZ7" secondAttribute="height" multiplier="1:1" id="1UU-hB-0cf"/>
                                             <constraint firstItem="EUL-s5-Ims" firstAttribute="top" secondItem="to6-hT-zZ7" secondAttribute="top" id="NNv-Ok-VTf"/>
                                             <constraint firstItem="EUL-s5-Ims" firstAttribute="leading" secondItem="to6-hT-zZ7" secondAttribute="leading" id="OfT-4i-5Je"/>
                                             <constraint firstAttribute="bottom" secondItem="EUL-s5-Ims" secondAttribute="bottom" id="PYD-Ki-uQC"/>
-                                            <constraint firstItem="USf-GV-K7C" firstAttribute="top" secondItem="to6-hT-zZ7" secondAttribute="top" constant="8" id="UUc-J7-91I"/>
                                             <constraint firstAttribute="trailing" secondItem="EUL-s5-Ims" secondAttribute="trailing" id="UX9-8e-OgN"/>
-                                            <constraint firstAttribute="trailing" secondItem="USf-GV-K7C" secondAttribute="trailing" constant="8" id="oDx-87-eP4"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qa-I8-7gW">
-                                        <rect key="frame" x="197.5" y="1.5" width="90.5" height="91"/>
+                                        <rect key="frame" x="208" y="3" width="96" height="96"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8B-Fn-rCd">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="91"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8B-Fn-rCd" customClass="SnackButton" customModule="Today_Widget">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <state key="normal" title="🥤"/>
                                                 <connections>
-                                                    <action selector="didTapDrink:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="jCW-a1-9ce"/>
+                                                    <action selector="didTapDrink:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="cLp-y9-vqp"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xA-ad-zNi">
-                                                <rect key="frame" x="56.5" y="8" width="26" height="26"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zke-vq-7Bd">
-                                                        <rect key="frame" x="7.5" y="3" width="11.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="zke-vq-7Bd" firstAttribute="centerY" secondItem="7xA-ad-zNi" secondAttribute="centerY" id="7Lj-J1-NeH"/>
-                                                    <constraint firstAttribute="width" constant="26" id="AJb-Od-X3i"/>
-                                                    <constraint firstAttribute="width" secondItem="7xA-ad-zNi" secondAttribute="height" multiplier="1:1" id="hrJ-Zm-svm"/>
-                                                    <constraint firstItem="zke-vq-7Bd" firstAttribute="centerX" secondItem="7xA-ad-zNi" secondAttribute="centerX" id="kkp-DX-b72"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="13"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8Qa-I8-7gW" secondAttribute="height" multiplier="1:1" id="0v3-9O-RjY"/>
                                             <constraint firstItem="I8B-Fn-rCd" firstAttribute="leading" secondItem="8Qa-I8-7gW" secondAttribute="leading" id="ArV-2c-kkb"/>
                                             <constraint firstAttribute="bottom" secondItem="I8B-Fn-rCd" secondAttribute="bottom" id="Dah-Ht-qL1"/>
-                                            <constraint firstAttribute="trailing" secondItem="7xA-ad-zNi" secondAttribute="trailing" constant="8" id="INp-GU-rtB"/>
                                             <constraint firstItem="I8B-Fn-rCd" firstAttribute="top" secondItem="8Qa-I8-7gW" secondAttribute="top" id="TfU-2O-LAY"/>
                                             <constraint firstAttribute="trailing" secondItem="I8B-Fn-rCd" secondAttribute="trailing" id="Wia-fH-j7t"/>
-                                            <constraint firstItem="7xA-ad-zNi" firstAttribute="top" secondItem="8Qa-I8-7gW" secondAttribute="top" constant="8" id="pCO-IM-BbZ"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="CWQ-xc-EoT" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="8h1-rl-a8f"/>
-                            <constraint firstItem="CWQ-xc-EoT" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="Nxm-s5-Gd8"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="CWQ-xc-EoT" secondAttribute="trailing" constant="16" id="VEB-cr-7s9"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="CWQ-xc-EoT" secondAttribute="bottom" constant="16" id="ppu-cA-l1U"/>
+                            <constraint firstItem="CWQ-xc-EoT" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="Nxm-s5-Gd8"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="CWQ-xc-EoT" secondAttribute="trailing" constant="8" id="VEB-cr-7s9"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="CWQ-xc-EoT" secondAttribute="bottom" constant="8" id="ppu-cA-l1U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -195,12 +96,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="110"/>
                     <connections>
-                        <outlet property="drinksLabel" destination="zke-vq-7Bd" id="XvT-zq-O3O"/>
-                        <outlet property="drinksLabelBackgroundView" destination="7xA-ad-zNi" id="Q6w-F4-cjV"/>
-                        <outlet property="mealLabel" destination="naL-Um-7ws" id="VFt-hO-sX6"/>
-                        <outlet property="mealLabelBackgroundView" destination="USf-GV-K7C" id="bq8-uU-xx9"/>
-                        <outlet property="sweetsLabel" destination="B7y-XL-Yal" id="sXr-YG-UYm"/>
-                        <outlet property="sweetsLabelBackgroundView" destination="gDV-mk-58E" id="Mcc-Ug-rGb"/>
+                        <outlet property="drinkButton" destination="I8B-Fn-rCd" id="anc-11-M7M"/>
+                        <outlet property="mealButton" destination="EUL-s5-Ims" id="XMW-CH-kfo"/>
+                        <outlet property="sweetsButton" destination="gcK-4F-GYr" id="l9T-cR-7CF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

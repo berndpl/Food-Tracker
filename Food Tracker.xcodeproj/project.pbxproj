@@ -33,6 +33,8 @@
 		89A2095624630EBD00E2914A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095224630EBD00E2914A /* Storage.swift */; };
 		89A209582463192400E2914A /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A209572463192400E2914A /* EntryViewController.swift */; };
 		89A2095B2463357100E2914A /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095A2463357100E2914A /* ItemTableViewCell.swift */; };
+		89BF3C70246578AB009D1105 /* SnackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C6F246578AB009D1105 /* SnackButton.swift */; };
+		89BF3C722465AF44009D1105 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C712465AF44009D1105 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		89A209572463192400E2914A /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		89A209592463232F00E2914A /* Food Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Food Tracker.entitlements"; sourceTree = "<group>"; };
 		89A2095A2463357100E2914A /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		89BF3C6F246578AB009D1105 /* SnackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackButton.swift; sourceTree = "<group>"; };
+		89BF3C712465AF44009D1105 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 				89A209272463039A00E2914A /* Main.storyboard */,
 				89A209332463084E00E2914A /* TableViewController.swift */,
 				89A209572463192400E2914A /* EntryViewController.swift */,
+				89BF3C712465AF44009D1105 /* EditViewController.swift */,
 				89A2095A2463357100E2914A /* ItemTableViewCell.swift */,
 			);
 			path = Interface;
@@ -194,6 +199,7 @@
 			children = (
 				8986E9EE2463A17A0035C940 /* Today Widget.entitlements */,
 				89A208B42462E96E00E2914A /* TodayViewController.swift */,
+				89BF3C6F246578AB009D1105 /* SnackButton.swift */,
 				89A208B62462E96E00E2914A /* MainInterface.storyboard */,
 				89A208B92462E96E00E2914A /* Info.plist */,
 			);
@@ -435,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BF3C70246578AB009D1105 /* SnackButton.swift in Sources */,
 				89A208B52462E96E00E2914A /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +456,7 @@
 				89A2095B2463357100E2914A /* ItemTableViewCell.swift in Sources */,
 				89A209242463039A00E2914A /* SceneDelegate.swift in Sources */,
 				896E118C246412BA00E55E84 /* Date+Extension.swift in Sources */,
+				89BF3C722465AF44009D1105 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

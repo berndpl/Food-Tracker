@@ -11,6 +11,15 @@ import TrackerKit
 
 class TableViewController:UITableViewController {
     var viewModel:ViewModel!
+
+    @IBAction func didTapEdit(_ sender: UIBarButtonItem) {
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        if tableView.isEditing {
+            sender.title = "Done"
+        } else {
+            sender.title = "Edit"
+        }
+    }
     
     @IBAction func didTapDeleteAll(_ sender: Any) {
         viewModel.didTapDeleteAll()
@@ -40,7 +49,8 @@ class TableViewController:UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Will Appear")
+        print("-------Table Will Appear-------")
+        print("Sections \(viewModel.state.itemSections().count) Items \(viewModel.state.items.count)")
     }
     
     // MARK: - Show Entry View Segue
@@ -48,8 +58,13 @@ class TableViewController:UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showEntry" {
             let entry = segue.destination as! EntryViewController
-            //let entry = navigationController.viewControllers.first as! EntryViewController
             entry.viewModel = viewModel
+        } else if segue.identifier == "showEdit" {
+            let edit = segue.destination as! EditViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow
+            let selectedItem = viewModel.selectedItem(section: selectedIndexPath!.section, item: selectedIndexPath!.item)
+            edit.viewModel = viewModel
+            edit.item = selectedItem
         }
     }
     
@@ -77,10 +92,11 @@ class TableViewController:UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        print("Edit \(editingStyle) \(indexPath)")
         if editingStyle == .delete {
-            viewModel.didTapDeleteItem(item:indexPath.item, row:indexPath.row)
-            //tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            print("Delete \(editingStyle) \(indexPath)")
+            
+            viewModel.didTapDeleteItem(section:indexPath.section, item:indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
     

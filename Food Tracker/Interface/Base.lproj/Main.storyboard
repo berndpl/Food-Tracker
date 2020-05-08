@@ -11,19 +11,19 @@
         <!--Entry View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="formSheet" id="BYZ-38-t0r" customClass="EntryViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="formSheet" id="BYZ-38-t0r" customClass="EntryViewController" customModule="Snacked" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bPN-S4-bFV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hzj-fv-EKN">
-                                <rect key="frame" x="40" y="148" width="334" height="100.5"/>
+                                <rect key="frame" x="8" y="120" width="398" height="122"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-ne-vBk">
-                                        <rect key="frame" x="0.0" y="0.0" width="100.5" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-lj-KuW">
-                                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="100.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>
                                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <state key="normal" title="🍭"/>
@@ -48,7 +48,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4z-wx-7PG">
-                                        <rect key="frame" x="116.5" y="0.0" width="101" height="100.5"/>
+                                        <rect key="frame" x="138" y="0.0" width="122" height="122"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="z4z-wx-7PG" secondAttribute="height" multiplier="1:1" id="WvJ-oh-CJ2"/>
@@ -66,7 +66,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBj-Wx-0nL">
-                                        <rect key="frame" x="233.5" y="0.0" width="100.5" height="100.5"/>
+                                        <rect key="frame" x="276" y="0.0" width="122" height="122"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rBj-Wx-0nL" secondAttribute="height" multiplier="1:1" id="dbp-7M-L65"/>
@@ -88,7 +88,7 @@
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ro6-3z-WIl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                                 <items>
-                                    <navigationItem title="I just got a…" id="A0O-t6-6N7">
+                                    <navigationItem title="Add Snack" id="A0O-t6-6N7">
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="rJV-kc-6Nc">
                                             <connections>
                                                 <action selector="didTapDone:" destination="BYZ-38-t0r" id="Ojc-vf-5Ii"/>
@@ -100,10 +100,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="PSc-PT-jt4" firstAttribute="trailing" secondItem="Hzj-fv-EKN" secondAttribute="trailing" constant="40" id="605-X3-2CK"/>
+                            <constraint firstItem="PSc-PT-jt4" firstAttribute="trailing" secondItem="Hzj-fv-EKN" secondAttribute="trailing" constant="8" id="605-X3-2CK"/>
                             <constraint firstItem="Ro6-3z-WIl" firstAttribute="top" secondItem="PSc-PT-jt4" secondAttribute="top" id="76i-Db-6tI"/>
-                            <constraint firstItem="Hzj-fv-EKN" firstAttribute="top" secondItem="Ro6-3z-WIl" secondAttribute="bottom" constant="40" id="Kj5-yC-8sO"/>
-                            <constraint firstItem="Hzj-fv-EKN" firstAttribute="leading" secondItem="PSc-PT-jt4" secondAttribute="leading" constant="40" id="Vzn-66-5xW"/>
+                            <constraint firstItem="Hzj-fv-EKN" firstAttribute="top" secondItem="Ro6-3z-WIl" secondAttribute="bottom" constant="12" id="Kj5-yC-8sO"/>
+                            <constraint firstItem="Hzj-fv-EKN" firstAttribute="leading" secondItem="PSc-PT-jt4" secondAttribute="leading" constant="8" id="Vzn-66-5xW"/>
                             <constraint firstAttribute="trailing" secondItem="Ro6-3z-WIl" secondAttribute="trailing" id="bJs-TR-CUb"/>
                             <constraint firstItem="Ro6-3z-WIl" firstAttribute="leading" secondItem="PSc-PT-jt4" secondAttribute="leading" id="inI-GO-YPC"/>
                         </constraints>
@@ -113,49 +113,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3395.652173913044" y="127.90178571428571"/>
+            <point key="canvasLocation" x="3433" y="117"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="d0S-fG-ej4">
+            <objects>
+                <viewController modalPresentationStyle="formSheet" id="tri-O6-sfP" customClass="EditViewController" customModule="Snacked" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="npv-AJ-1Vb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HXd-oV-mxC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                                <items>
+                                    <navigationItem title="🍭" id="WXo-cm-7Sz">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="h2I-m4-tpQ">
+                                            <connections>
+                                                <action selector="didTapDone:" destination="tri-O6-sfP" id="olY-hD-653"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-3o-s3U">
+                                <rect key="frame" x="0.0" y="217" width="414" height="596"/>
+                                <connections>
+                                    <action selector="didChangeValue:forEvent:" destination="tri-O6-sfP" eventType="valueChanged" id="YrB-Ys-eaN"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HXd-oV-mxC" secondAttribute="trailing" id="Qoq-L2-QDu"/>
+                            <constraint firstItem="HXd-oV-mxC" firstAttribute="leading" secondItem="m7f-k1-o3R" secondAttribute="leading" id="UaN-3m-CSb"/>
+                            <constraint firstItem="HXd-oV-mxC" firstAttribute="top" secondItem="m7f-k1-o3R" secondAttribute="top" id="jTi-2u-jaM"/>
+                            <constraint firstItem="fEk-3o-s3U" firstAttribute="trailing" secondItem="m7f-k1-o3R" secondAttribute="trailing" id="m6f-OZ-tMF"/>
+                            <constraint firstItem="fEk-3o-s3U" firstAttribute="top" secondItem="HXd-oV-mxC" secondAttribute="bottom" constant="40" id="pLu-7v-i8m"/>
+                            <constraint firstItem="fEk-3o-s3U" firstAttribute="leading" secondItem="m7f-k1-o3R" secondAttribute="leading" id="pp8-hH-dmF"/>
+                            <constraint firstItem="m7f-k1-o3R" firstAttribute="bottom" secondItem="fEk-3o-s3U" secondAttribute="bottom" constant="40" id="vp3-OV-Rsb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m7f-k1-o3R"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VKo-Jt-bbl"/>
+                    <connections>
+                        <outlet property="datePicker" destination="fEk-3o-s3U" id="AUn-52-1jO"/>
+                        <outlet property="navigationBar" destination="HXd-oV-mxC" id="4rs-E2-tQd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMO-Zd-L7D" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3432" y="856"/>
         </scene>
         <!--Food-->
         <scene sceneID="I2V-h9-Lit">
             <objects>
-                <tableViewController title="Food" id="Cpc-9w-UGc" customClass="TableViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Food" id="Cpc-9w-UGc" customClass="TableViewController" customModule="Snacked" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Anr-Xf-I1y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Bnq-3R-YT4">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the Today Widget to add items quickly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UsR-ho-IK2">
+                            <rect key="frame" x="0.0" y="128.5" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OmT-RQ-8w1">
-                                    <rect key="frame" x="16" y="0.0" width="382" height="54"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z6D-Le-4hP">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="54"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAH-dM-THt">
-                                                    <rect key="frame" x="0.0" y="17" width="333" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Nr-0D-5Gs">
-                                                    <rect key="frame" x="333" y="11.5" width="51" height="31"/>
-                                                </switch>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="OmT-RQ-8w1" secondAttribute="trailing" constant="16" id="1H1-fp-Xre"/>
-                                <constraint firstItem="OmT-RQ-8w1" firstAttribute="leading" secondItem="Bnq-3R-YT4" secondAttribute="leading" constant="16" id="2Ma-za-OXC"/>
-                                <constraint firstAttribute="bottom" secondItem="OmT-RQ-8w1" secondAttribute="bottom" id="g5U-Qc-JqO"/>
-                                <constraint firstItem="OmT-RQ-8w1" firstAttribute="top" secondItem="Bnq-3R-YT4" secondAttribute="top" id="lyY-2c-uUH"/>
-                            </constraints>
-                        </view>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="trackedItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackedItem" id="e6M-dl-3ci" customClass="ItemTableViewCell" customModule="Food_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="20" y="109.5" width="374" height="55"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="trackedItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackedItem" id="e6M-dl-3ci" customClass="ItemTableViewCell" customModule="Snacked" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.5" width="374" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6M-dl-3ci" id="eJI-6y-v8c">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
@@ -188,6 +213,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="H1d-tw-vAT" id="t7V-GG-kmO"/>
                                     <outlet property="itemCategoryLabel" destination="DQG-8i-bek" id="5cQ-fn-05k"/>
+                                    <segue destination="tri-O6-sfP" kind="presentation" identifier="showEdit" modalPresentationStyle="formSheet" id="HO7-WY-QX1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -198,12 +224,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Snacked" id="lpP-Vc-hpC">
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="P95-Ei-hIl">
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="didTapDeleteAll:" destination="Cpc-9w-UGc" id="4O9-5l-MRy"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Edit" id="4Lh-cF-8XO">
+                                <connections>
+                                    <action selector="didTapEdit:" destination="Cpc-9w-UGc" id="i6w-x3-Kpg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Delete All" id="P5M-q4-dVG">
+                                <connections>
+                                    <action selector="didTapDeleteAll:" destination="Cpc-9w-UGc" id="QN9-HB-5ki"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Add Item" image="plus.circle.fill" catalog="system" id="KD4-lV-7Co">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" identifier="showEntry" modalPresentationStyle="formSheet" id="kjx-TK-bAt"/>

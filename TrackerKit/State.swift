@@ -14,7 +14,7 @@ public struct State:Codable, CustomDebugStringConvertible {
     public var debugDescription:String {
         return "[State] Items \(items.count)"
     }
-    
+
     public func countLabel(itemCategory:ItemCategory)->String {
         let counted = count(itemCategory: itemCategory)
         return counted == 0 ? "" : "\(counted)"

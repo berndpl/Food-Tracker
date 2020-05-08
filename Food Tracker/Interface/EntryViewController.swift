@@ -43,7 +43,7 @@ class EntryViewController:UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Will Appear")
+        print("-------Entry Will Appear-------")
     }
     
 }

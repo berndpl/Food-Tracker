@@ -14,7 +14,7 @@ public class ViewModel:NSObject {
     public var state: State = State(items: allItems()) {
         didSet {
             print("Callback!")
-            callback(state)
+            //callback(state)
         }
     }
     
@@ -30,14 +30,24 @@ public class ViewModel:NSObject {
         shouldReload()
     }
     
-    public func didTapDeleteItem(item:Int, row:Int) {
-        let itemToRemove = state.itemSections()[item][row]
-        print("Delete Item \(item) Row \(row) Item \(itemToRemove)")
+    public func didTapDeleteItem(section:Int, item:Int) {
+        let itemToRemove = selectedItem(section:section, item:item)
+        print("Delete Item \(itemToRemove)")
         print("BEFORE \(state.items.count)")
         state.items.removeAll(where: {$0.id == itemToRemove.id})
         print("AFTER \(state.items.count)")
         Storage.save(state: state)
-        shouldReload()
+    }
+    
+    public func didChangeDate(selectedItem:Item, date:Date) {
+        print("Change \(selectedItem) Date \(date)")
+        //state.items.filter{ $0.id == selectedItem.id }.first?.createDate = date
+    }
+    
+    
+    public func selectedItem(section:Int, item:Int)->Item {
+        let item = state.itemSections()[section][item]
+        return item
     }
     
     public func didTapDeleteAll() {
@@ -54,6 +64,7 @@ public class ViewModel:NSObject {
                state = initialState()
                print("Initial State \(state)")
            }
+        callback(state)
     }
     
     func initialState()->State {

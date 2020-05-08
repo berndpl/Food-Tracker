@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89A2091E2463039A00E2914A"
-               BuildableName = "Food Tracker.app"
+               BuildableName = "Snacked.app"
                BlueprintName = "Food Tracker"
                ReferencedContainer = "container:Food Tracker.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89A2091E2463039A00E2914A"
-            BuildableName = "Food Tracker.app"
+            BuildableName = "Snacked.app"
             BlueprintName = "Food Tracker"
             ReferencedContainer = "container:Food Tracker.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89A2091E2463039A00E2914A"
-            BuildableName = "Food Tracker.app"
+            BuildableName = "Snacked.app"
             BlueprintName = "Food Tracker"
             ReferencedContainer = "container:Food Tracker.xcodeproj">
          </BuildableReference>
