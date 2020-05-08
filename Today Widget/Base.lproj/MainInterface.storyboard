@@ -19,10 +19,10 @@
                                 <rect key="frame" x="16" y="0.0" width="288" height="94"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sb1-yZ-sEM">
-                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="94"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="90.5" height="91"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-4F-GYr">
-                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="91"/>
                                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <state key="normal" title="🍭"/>
@@ -60,7 +60,7 @@
                                             <constraint firstAttribute="trailing" secondItem="gcK-4F-GYr" secondAttribute="trailing" id="EMB-Ys-8wS"/>
                                             <constraint firstItem="gDV-mk-58E" firstAttribute="top" secondItem="Sb1-yZ-sEM" secondAttribute="top" constant="8" id="FgO-r4-J3I"/>
                                             <constraint firstItem="gcK-4F-GYr" firstAttribute="leading" secondItem="Sb1-yZ-sEM" secondAttribute="leading" id="Iph-Km-qXX"/>
-                                            <constraint firstAttribute="width" secondItem="Sb1-yZ-sEM" secondAttribute="height" multiplier="45:47" id="XEB-Fy-MKf"/>
+                                            <constraint firstAttribute="width" secondItem="Sb1-yZ-sEM" secondAttribute="height" multiplier="1:1" id="XEB-Fy-MKf"/>
                                             <constraint firstAttribute="bottom" secondItem="gcK-4F-GYr" secondAttribute="bottom" id="d0G-YP-IVP"/>
                                             <constraint firstItem="gcK-4F-GYr" firstAttribute="top" secondItem="Sb1-yZ-sEM" secondAttribute="top" id="ras-NU-UWG"/>
                                             <constraint firstAttribute="trailing" secondItem="gDV-mk-58E" secondAttribute="trailing" constant="8" id="u2f-GK-lZl"/>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="Notification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RZC-ax-SZv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqH-7U-bvh">
+                                        <rect key="frame" x="0.0" y="4.5" width="101.5" height="101"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-c1-M43">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="101"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                <state key="normal" title="🍭"/>
+                                                <connections>
+                                                    <action selector="didTapSweets:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="UIc-Jq-Cms"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xse-bL-5mq">
+                                                <rect key="frame" x="67.5" y="8" width="26" height="26"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWw-pY-NwA">
+                                                        <rect key="frame" x="7" y="2.5" width="11.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="26" id="57m-dl-R5E"/>
+                                                    <constraint firstItem="bWw-pY-NwA" firstAttribute="centerX" secondItem="Xse-bL-5mq" secondAttribute="centerX" id="NZS-jP-otU"/>
+                                                    <constraint firstItem="bWw-pY-NwA" firstAttribute="centerY" secondItem="Xse-bL-5mq" secondAttribute="centerY" id="nvB-MP-LI8"/>
+                                                    <constraint firstAttribute="width" secondItem="Xse-bL-5mq" secondAttribute="height" multiplier="1:1" id="xU9-nN-L0s"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="DzN-c1-M43" firstAttribute="top" secondItem="dqH-7U-bvh" secondAttribute="top" id="9js-aI-uIY"/>
+                                            <constraint firstAttribute="bottom" secondItem="DzN-c1-M43" secondAttribute="bottom" id="BMO-D1-NcS"/>
+                                            <constraint firstItem="DzN-c1-M43" firstAttribute="leading" secondItem="dqH-7U-bvh" secondAttribute="leading" id="Ihd-oq-bnK"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xse-bL-5mq" secondAttribute="trailing" constant="8" id="PLs-jT-LWT"/>
+                                            <constraint firstAttribute="trailing" secondItem="DzN-c1-M43" secondAttribute="trailing" id="oC8-iD-XCy"/>
+                                            <constraint firstItem="Xse-bL-5mq" firstAttribute="top" secondItem="dqH-7U-bvh" secondAttribute="top" constant="8" id="pvX-Dq-MWD"/>
+                                            <constraint firstAttribute="width" secondItem="dqH-7U-bvh" secondAttribute="height" multiplier="1:1" id="v5X-sn-gaK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WD-Ny-OYu">
+                                        <rect key="frame" x="109.5" y="4.5" width="101" height="101"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0i-mK-CWc">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                <state key="normal" title="🥪"/>
+                                                <connections>
+                                                    <action selector="didTapMeal:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="9jG-rM-4Ny"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-hd-cIJ">
+                                                <rect key="frame" x="67" y="8" width="26" height="26"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8z-pY-8iI">
+                                                        <rect key="frame" x="7.5" y="2.5" width="11.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="k2F-hd-cIJ" secondAttribute="height" multiplier="1:1" id="O6R-hI-l0B"/>
+                                                    <constraint firstItem="U8z-pY-8iI" firstAttribute="centerY" secondItem="k2F-hd-cIJ" secondAttribute="centerY" id="Uyw-TH-hGK"/>
+                                                    <constraint firstAttribute="width" constant="26" id="vXT-z0-Xkd"/>
+                                                    <constraint firstItem="U8z-pY-8iI" firstAttribute="centerX" secondItem="k2F-hd-cIJ" secondAttribute="centerX" id="wCn-Z7-H9W"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="J0i-mK-CWc" secondAttribute="trailing" id="8zR-O0-IYw"/>
+                                            <constraint firstItem="J0i-mK-CWc" firstAttribute="top" secondItem="3WD-Ny-OYu" secondAttribute="top" id="An0-sG-hjJ"/>
+                                            <constraint firstAttribute="width" secondItem="3WD-Ny-OYu" secondAttribute="height" multiplier="1:1" id="Feb-s3-2zK"/>
+                                            <constraint firstAttribute="bottom" secondItem="J0i-mK-CWc" secondAttribute="bottom" id="hcT-8P-A95"/>
+                                            <constraint firstItem="k2F-hd-cIJ" firstAttribute="top" secondItem="3WD-Ny-OYu" secondAttribute="top" constant="8" id="qs5-GV-i4q"/>
+                                            <constraint firstItem="J0i-mK-CWc" firstAttribute="leading" secondItem="3WD-Ny-OYu" secondAttribute="leading" id="rJS-6s-KQU"/>
+                                            <constraint firstAttribute="trailing" secondItem="k2F-hd-cIJ" secondAttribute="trailing" constant="8" id="zpR-IX-kFj"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ia4-g7-a3e">
+                                        <rect key="frame" x="218.5" y="4.5" width="101.5" height="101"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-WW-aL7">
+                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="101"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                <state key="normal" title="🥤"/>
+                                                <connections>
+                                                    <action selector="didTapDrink:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="uRm-Is-4Un"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyo-7Z-WSy">
+                                                <rect key="frame" x="67.5" y="8" width="26" height="26"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-74-wXo">
+                                                        <rect key="frame" x="7.5" y="2.5" width="11.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="26" id="7R0-I7-9NR"/>
+                                                    <constraint firstItem="iwh-74-wXo" firstAttribute="centerX" secondItem="tyo-7Z-WSy" secondAttribute="centerX" id="A52-gB-9gB"/>
+                                                    <constraint firstItem="iwh-74-wXo" firstAttribute="centerY" secondItem="tyo-7Z-WSy" secondAttribute="centerY" id="Egd-04-rZe"/>
+                                                    <constraint firstAttribute="width" secondItem="tyo-7Z-WSy" secondAttribute="height" multiplier="1:1" id="Zv0-95-JCF"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="dIS-WW-aL7" firstAttribute="leading" secondItem="ia4-g7-a3e" secondAttribute="leading" id="1y8-Xo-Xyu"/>
+                                            <constraint firstItem="dIS-WW-aL7" firstAttribute="top" secondItem="ia4-g7-a3e" secondAttribute="top" id="5fY-Et-YcF"/>
+                                            <constraint firstItem="tyo-7Z-WSy" firstAttribute="top" secondItem="ia4-g7-a3e" secondAttribute="top" constant="8" id="9cx-sh-E0d"/>
+                                            <constraint firstAttribute="trailing" secondItem="dIS-WW-aL7" secondAttribute="trailing" id="Gi6-d3-uet"/>
+                                            <constraint firstAttribute="width" secondItem="ia4-g7-a3e" secondAttribute="height" multiplier="1:1" id="jvj-a6-Lzj"/>
+                                            <constraint firstAttribute="trailing" secondItem="tyo-7Z-WSy" secondAttribute="trailing" constant="8" id="kue-YY-KH2"/>
+                                            <constraint firstAttribute="bottom" secondItem="dIS-WW-aL7" secondAttribute="bottom" id="lXu-GQ-q3C"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45882353186607361" green="0.74901962280273438" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="RZC-ax-SZv" secondAttribute="trailing" id="A0r-WM-qs1"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="RZC-ax-SZv" secondAttribute="bottom" id="eOP-Rh-EKR"/>
+                            <constraint firstItem="RZC-ax-SZv" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="mTO-mk-ZWT"/>
+                            <constraint firstItem="RZC-ax-SZv" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" id="mnX-AB-tz8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="110"/>
+                    <connections>
+                        <outlet property="drinksLabel" destination="iwh-74-wXo" id="AwC-D4-EQs"/>
+                        <outlet property="drinksLabelBackgroundView" destination="tyo-7Z-WSy" id="zWu-Mo-oqU"/>
+                        <outlet property="mealLabel" destination="U8z-pY-8iI" id="phm-dx-TUQ"/>
+                        <outlet property="mealLabelBackgroundView" destination="k2F-hd-cIJ" id="IOc-Pp-Jhb"/>
+                        <outlet property="sweetsLabel" destination="bWw-pY-NwA" id="ctp-X3-if6"/>
+                        <outlet property="sweetsLabelBackgroundView" destination="Xse-bL-5mq" id="HjC-8o-XoM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="87"/>
+        </scene>
+    </scenes>
+</document>

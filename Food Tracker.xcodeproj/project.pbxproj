@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		896E118C246412BA00E55E84 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E1187246410E400E55E84 /* Date+Extension.swift */; };
+		899B4AD72465089F00FBD4F5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899B4AD62465089F00FBD4F5 /* UserNotifications.framework */; };
+		899B4AD92465089F00FBD4F5 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899B4AD82465089F00FBD4F5 /* UserNotificationsUI.framework */; };
+		899B4ADC2465089F00FBD4F5 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B4ADB2465089F00FBD4F5 /* NotificationViewController.swift */; };
+		899B4ADF2465089F00FBD4F5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899B4ADD2465089F00FBD4F5 /* MainInterface.storyboard */; };
+		899B4AE32465089F00FBD4F5 /* Notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 899B4AD52465089F00FBD4F5 /* Notification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		899B4AE924650C3B00FBD4F5 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B4AE824650C3B00FBD4F5 /* LocalNotification.swift */; };
 		89A208B22462E96E00E2914A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A208B12462E96E00E2914A /* NotificationCenter.framework */; };
 		89A208B52462E96E00E2914A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A208B42462E96E00E2914A /* TodayViewController.swift */; };
 		89A208B82462E96E00E2914A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A208B62462E96E00E2914A /* MainInterface.storyboard */; };
@@ -30,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		899B4AE12465089F00FBD4F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89E8E7C02462B32D00CE340B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 899B4AD42465089F00FBD4F5;
+			remoteInfo = Notification;
+		};
 		89A20936246308BD00E2914A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 89E8E7C02462B32D00CE340B /* Project object */;
@@ -54,6 +67,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				89A20935246308BD00E2914A /* Today Widget.appex in Embed App Extensions */,
+				899B4AE32465089F00FBD4F5 /* Notification.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +88,14 @@
 /* Begin PBXFileReference section */
 		896E1187246410E400E55E84 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8986E9EE2463A17A0035C940 /* Today Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Today Widget.entitlements"; sourceTree = "<group>"; };
+		899B4AD52465089F00FBD4F5 /* Notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		899B4AD62465089F00FBD4F5 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		899B4AD82465089F00FBD4F5 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		899B4ADB2465089F00FBD4F5 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		899B4ADE2465089F00FBD4F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		899B4AE02465089F00FBD4F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		899B4AE7246508B800FBD4F5 /* Notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notification.entitlements; sourceTree = "<group>"; };
+		899B4AE824650C3B00FBD4F5 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		89A208AF2462E96E00E2914A /* Today Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Today Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A208B12462E96E00E2914A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		89A208B42462E96E00E2914A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +122,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		899B4AD22465089F00FBD4F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				899B4AD92465089F00FBD4F5 /* UserNotificationsUI.framework in Frameworks */,
+				899B4AD72465089F00FBD4F5 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89A208AC2462E96E00E2914A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,10 +168,23 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
+		899B4ADA2465089F00FBD4F5 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				899B4AE7246508B800FBD4F5 /* Notification.entitlements */,
+				899B4ADB2465089F00FBD4F5 /* NotificationViewController.swift */,
+				899B4ADD2465089F00FBD4F5 /* MainInterface.storyboard */,
+				899B4AE02465089F00FBD4F5 /* Info.plist */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		89A208B02462E96E00E2914A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				89A208B12462E96E00E2914A /* NotificationCenter.framework */,
+				899B4AD62465089F00FBD4F5 /* UserNotifications.framework */,
+				899B4AD82465089F00FBD4F5 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,6 +224,7 @@
 				89A2095124630EBD00E2914A /* State.swift */,
 				89A2095224630EBD00E2914A /* Storage.swift */,
 				89A2094F24630EBD00E2914A /* ViewModel.swift */,
+				899B4AE824650C3B00FBD4F5 /* LocalNotification.swift */,
 			);
 			path = TrackerKit;
 			sourceTree = "<group>";
@@ -190,6 +235,7 @@
 				89A209202463039A00E2914A /* Food Tracker */,
 				89A208B32462E96E00E2914A /* Today Widget */,
 				89A2094424630EA200E2914A /* TrackerKit */,
+				899B4ADA2465089F00FBD4F5 /* Notification */,
 				89A208B02462E96E00E2914A /* Frameworks */,
 				89E8E7C92462B32D00CE340B /* Products */,
 			);
@@ -201,6 +247,7 @@
 				89A208AF2462E96E00E2914A /* Today Widget.appex */,
 				89A2091F2463039A00E2914A /* Food Tracker.app */,
 				89A2094324630EA200E2914A /* TrackerKit.framework */,
+				899B4AD52465089F00FBD4F5 /* Notification.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,6 +266,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		899B4AD42465089F00FBD4F5 /* Notification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 899B4AE62465089F00FBD4F5 /* Build configuration list for PBXNativeTarget "Notification" */;
+			buildPhases = (
+				899B4AD12465089F00FBD4F5 /* Sources */,
+				899B4AD22465089F00FBD4F5 /* Frameworks */,
+				899B4AD32465089F00FBD4F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Notification;
+			productName = Notification;
+			productReference = 899B4AD52465089F00FBD4F5 /* Notification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		89A208AE2462E96E00E2914A /* Today Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A208C02462E96E00E2914A /* Build configuration list for PBXNativeTarget "Today Widget" */;
@@ -251,6 +315,7 @@
 			dependencies = (
 				89A20937246308BD00E2914A /* PBXTargetDependency */,
 				89A2094924630EA200E2914A /* PBXTargetDependency */,
+				899B4AE22465089F00FBD4F5 /* PBXTargetDependency */,
 			);
 			name = "Food Tracker";
 			productName = "Food Tracker";
@@ -285,6 +350,9 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Bernd Plontsch";
 				TargetAttributes = {
+					899B4AD42465089F00FBD4F5 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 					89A208AE2462E96E00E2914A = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -313,11 +381,20 @@
 				89A2091E2463039A00E2914A /* Food Tracker */,
 				89A2094224630EA200E2914A /* TrackerKit */,
 				89A208AE2462E96E00E2914A /* Today Widget */,
+				899B4AD42465089F00FBD4F5 /* Notification */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		899B4AD32465089F00FBD4F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				899B4ADF2465089F00FBD4F5 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89A208AD2462E96E00E2914A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +423,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		899B4AD12465089F00FBD4F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				899B4ADC2465089F00FBD4F5 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89A208AB2462E96E00E2914A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,6 +459,7 @@
 				89A2095424630EBD00E2914A /* Item.swift in Sources */,
 				89A2095624630EBD00E2914A /* Storage.swift in Sources */,
 				89A2095324630EBD00E2914A /* ViewModel.swift in Sources */,
+				899B4AE924650C3B00FBD4F5 /* LocalNotification.swift in Sources */,
 				89A2095524630EBD00E2914A /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +467,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		899B4AE22465089F00FBD4F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 899B4AD42465089F00FBD4F5 /* Notification */;
+			targetProxy = 899B4AE12465089F00FBD4F5 /* PBXContainerItemProxy */;
+		};
 		89A20937246308BD00E2914A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89A208AE2462E96E00E2914A /* Today Widget */;
@@ -394,6 +485,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		899B4ADD2465089F00FBD4F5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				899B4ADE2465089F00FBD4F5 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		89A208B62462E96E00E2914A /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -421,6 +520,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		899B4AE42465089F00FBD4F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Notification/Notification.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DNKZNVGEK5;
+				INFOPLIST_FILE = Notification/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.plontsch.Food-Tracker.Notification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		899B4AE52465089F00FBD4F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Notification/Notification.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DNKZNVGEK5;
+				INFOPLIST_FILE = Notification/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.plontsch.Food-Tracker.Notification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		89A208BE2462E96E00E2914A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -677,6 +816,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		899B4AE62465089F00FBD4F5 /* Build configuration list for PBXNativeTarget "Notification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				899B4AE42465089F00FBD4F5 /* Debug */,
+				899B4AE52465089F00FBD4F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		89A208C02462E96E00E2914A /* Build configuration list for PBXNativeTarget "Today Widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
