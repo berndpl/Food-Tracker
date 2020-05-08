@@ -171,8 +171,50 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Anr-Xf-I1y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" id="NJW-bp-XFS">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFb-Y6-NJL" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="16" width="132.5" height="70"/>
+                                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="IFb-Y6-NJL" secondAttribute="height" multiplier="1:1" id="K8q-rx-LlD"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                    <state key="normal" title="🍭"/>
+                                    <connections>
+                                        <action selector="didTapSweets:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="jvk-dU-VWP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyG-Hi-U1t" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                    <rect key="frame" x="140.5" y="16" width="133" height="70"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="GyG-Hi-U1t" secondAttribute="height" multiplier="1:1" id="ZfB-Pf-1VG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                    <state key="normal" title="🥪"/>
+                                    <connections>
+                                        <action selector="didTapMeal:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="Ye6-MV-54t"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKC-Cs-ce1" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                    <rect key="frame" x="281.5" y="16" width="132.5" height="70"/>
+                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="CKC-Cs-ce1" secondAttribute="height" multiplier="1:1" id="P9y-pT-o3C"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                    <state key="normal" title="🥤"/>
+                                    <connections>
+                                        <action selector="didTapDrink:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="cRy-rI-uGC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the Today Widget to add items quickly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UsR-ho-IK2">
-                            <rect key="frame" x="0.0" y="128.5" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="230.5" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -180,7 +222,7 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="trackedItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackedItem" id="e6M-dl-3ci" customClass="ItemTableViewCell" customModule="Snacked" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.5" width="374" height="55"/>
+                                <rect key="frame" x="20" y="157.5" width="374" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6M-dl-3ci" id="eJI-6y-v8c">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>

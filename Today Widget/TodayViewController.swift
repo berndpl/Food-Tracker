@@ -19,15 +19,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var drinkButton: SnackButton!
     
     @IBAction func didTapSweets(_ sender: Any) {
-        viewModel.didTap(itemCategory:ItemCategory.sweets)
+        viewModel.didTap(itemCategory:ItemCategory.sweets, shouldUpdate: true)
     }
     
     @IBAction func didTapMeal(_ sender: Any) {
-        viewModel.didTap(itemCategory:ItemCategory.meal)
+        viewModel.didTap(itemCategory:ItemCategory.meal, shouldUpdate: true)
     }
     
     @IBAction func didTapDrink(_ sender: Any) {
-        viewModel.didTap(itemCategory:ItemCategory.drink)
+        viewModel.didTap(itemCategory:ItemCategory.drink, shouldUpdate: true)
     }
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         })
         
         print("\(viewModel.state)")
-        viewModel.shouldReload()
+        viewModel.todayWidgetDidLoad()
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

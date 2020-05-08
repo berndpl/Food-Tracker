@@ -22,7 +22,8 @@ public struct State:Codable, CustomDebugStringConvertible {
     
     public func count(itemCategory:ItemCategory)->Int {
         let countedItem = items.filter { (item:Item) -> Bool in
-            return item.itemCategory == itemCategory
+            let isMatchingCategory = item.itemCategory == itemCategory
+            return isMatchingCategory && item.createDate.isToday
         }.count
         return countedItem
     }

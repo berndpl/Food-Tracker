@@ -12,6 +12,22 @@ import TrackerKit
 class TableViewController:UITableViewController {
     var viewModel:ViewModel!
 
+    @IBAction func didTapSweets(_ sender: Any) {
+        viewModel.didTap(itemCategory:ItemCategory.sweets, shouldUpdate: false)
+        tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+        //tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+    }
+    
+    @IBAction func didTapMeal(_ sender: Any) {
+        viewModel.didTap(itemCategory:ItemCategory.meal, shouldUpdate: false)
+        tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+    }
+    
+    @IBAction func didTapDrink(_ sender: Any) {
+        viewModel.didTap(itemCategory:ItemCategory.drink, shouldUpdate: false)
+        tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+    }
+    
     @IBAction func didTapEdit(_ sender: UIBarButtonItem) {
         tableView.setEditing(!tableView.isEditing, animated: true)
         if tableView.isEditing {
@@ -33,8 +49,8 @@ class TableViewController:UITableViewController {
         })
         print("\(viewModel.state)")
         //self.tableView.delegate = self
-        shouldReload()
         NotificationCenter.default.addObserver(self, selector: #selector(shouldReload), name: UIApplication.willEnterForegroundNotification, object: nil)
+            shouldReload()
     }
     
     @IBAction func didTapCheck(_ sender: Any) {
@@ -44,7 +60,7 @@ class TableViewController:UITableViewController {
     }
     
     @objc func shouldReload() {
-        viewModel.shouldReload()
+        viewModel.todayWidgetDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +85,7 @@ class TableViewController:UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if viewModel.state.itemSections().count > 0 {
             let itemSection:[Item] = viewModel.state.itemSections()[section]
@@ -78,6 +94,26 @@ class TableViewController:UITableViewController {
             return nil
         }
     }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let label = UILabel()
+//        if viewModel.state.itemSections().count > 0 {
+//            let itemSection:[Item] = viewModel.state.itemSections()[section]
+//            label.text = "\(itemSection.first!.createDate.shortRelative)"
+//        }
+//        label.sizeToFit()
+//        return label
+//    }
+//    
+//    override func tableView(_ tableView: UITableView,
+//                   heightForHeaderInSection section: Int) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//
+//    override func tableView(_ tableView: UITableView,
+//                   estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+//        return 50.0
+//    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.state.itemSections().count

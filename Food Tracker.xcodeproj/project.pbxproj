@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		894281B12465CA7E0052F788 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894281B02465CA7E0052F788 /* Date+Extension.swift */; };
+		894281B22465D5630052F788 /* SnackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C6F246578AB009D1105 /* SnackButton.swift */; };
 		896E118C246412BA00E55E84 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E1187246410E400E55E84 /* Date+Extension.swift */; };
 		899B4AD72465089F00FBD4F5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899B4AD62465089F00FBD4F5 /* UserNotifications.framework */; };
 		899B4AD92465089F00FBD4F5 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899B4AD82465089F00FBD4F5 /* UserNotificationsUI.framework */; };
@@ -88,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		894281B02465CA7E0052F788 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		896E1187246410E400E55E84 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8986E9EE2463A17A0035C940 /* Today Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Today Widget.entitlements"; sourceTree = "<group>"; };
 		899B4AD52465089F00FBD4F5 /* Notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +233,7 @@
 				89A2095124630EBD00E2914A /* State.swift */,
 				89A2095224630EBD00E2914A /* Storage.swift */,
 				89A2094F24630EBD00E2914A /* ViewModel.swift */,
+				894281B02465CA7E0052F788 /* Date+Extension.swift */,
 				899B4AE824650C3B00FBD4F5 /* LocalNotification.swift */,
 			);
 			path = TrackerKit;
@@ -450,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894281B22465D5630052F788 /* SnackButton.swift in Sources */,
 				89A209222463039A00E2914A /* AppDelegate.swift in Sources */,
 				89A209582463192400E2914A /* EntryViewController.swift in Sources */,
 				89A209342463084E00E2914A /* TableViewController.swift in Sources */,
@@ -469,6 +474,7 @@
 				89A2095324630EBD00E2914A /* ViewModel.swift in Sources */,
 				899B4AE924650C3B00FBD4F5 /* LocalNotification.swift in Sources */,
 				89A2095524630EBD00E2914A /* State.swift in Sources */,
+				894281B12465CA7E0052F788 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

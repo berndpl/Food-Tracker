@@ -18,7 +18,7 @@ final class SnackButton: UIButton {
     
     var badgeView:UIView = UIView()
     var badgeCountLabel:UILabel = UILabel()
-    @IBInspectable public var badgeCount:Int = 8 {
+    public var badgeCount:Int = 0 {
         didSet {
             badgeCountLabel.text = "\(self.badgeCount)"
             if badgeCount == 0 {
@@ -32,10 +32,12 @@ final class SnackButton: UIButton {
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        self.badgeView.isHidden = true
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.badgeView.isHidden = true
     }
 
     override func layoutSubviews() {

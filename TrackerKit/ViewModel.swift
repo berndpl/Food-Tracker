@@ -22,12 +22,15 @@ public class ViewModel:NSObject {
         self.callback = callback
     }
     
-    public func didTap(itemCategory:ItemCategory) {
+    public func didTap(itemCategory:ItemCategory, shouldUpdate:Bool=false) {
         let newItem = Item(itemCategory: itemCategory, date: Date())
         print("Add \(newItem)")
         state.items.append(newItem)
         Storage.save(state: state)
         shouldReload()
+        if shouldUpdate {
+            callback(state)
+        }
     }
     
     public func didTapDeleteItem(section:Int, item:Int) {
@@ -56,6 +59,11 @@ public class ViewModel:NSObject {
         shouldReload()
     }
     
+    public func todayWidgetDidLoad() {
+        shouldReload()
+        callback(state)
+    }
+    
     public func shouldReload() {
            if let savedState = Storage.load() {
                state = savedState
@@ -64,7 +72,6 @@ public class ViewModel:NSObject {
                state = initialState()
                print("Initial State \(state)")
            }
-        callback(state)
     }
     
     func initialState()->State {
