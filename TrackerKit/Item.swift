@@ -23,10 +23,17 @@ public enum ItemCategory:Int, Codable, CustomStringConvertible {
     }
 }
 
-public struct Item:Codable, CustomDebugStringConvertible, Identifiable {
+public struct Item:Codable, CustomDebugStringConvertible, Identifiable, Hashable {
     public let itemCategory:ItemCategory
     public var createDate:Date
     public let id:UUID = UUID()
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    public static func == (lhs: Item, rhs: Item) -> Bool {
+        return lhs.id == rhs.id
+    }
     
     init(itemCategory: ItemCategory,
         date: Date) {
