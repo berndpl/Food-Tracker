@@ -57,6 +57,7 @@ public class ViewModel:NSObject {
         let emptyState = State(items: [])
         Storage.save(state: emptyState)
         shouldReload()
+        callback(state)
     }
     
     public func todayWidgetDidLoad() {

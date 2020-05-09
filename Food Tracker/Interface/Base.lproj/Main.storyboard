@@ -8,113 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Entry View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController modalPresentationStyle="formSheet" id="BYZ-38-t0r" customClass="EntryViewController" customModule="Snacked" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bPN-S4-bFV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hzj-fv-EKN">
-                                <rect key="frame" x="8" y="120" width="398" height="122"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-ne-vBk">
-                                        <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-lj-KuW">
-                                                <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>
-                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                <state key="normal" title="🍭"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="24"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="didTapSweets:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mif-Fg-vVX"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstItem="5dc-lj-KuW" firstAttribute="leading" secondItem="cO3-ne-vBk" secondAttribute="leading" id="1fc-nr-ORk"/>
-                                            <constraint firstAttribute="trailing" secondItem="5dc-lj-KuW" secondAttribute="trailing" id="7ru-5l-4s4"/>
-                                            <constraint firstAttribute="bottom" secondItem="5dc-lj-KuW" secondAttribute="bottom" id="KIw-sJ-8Dw"/>
-                                            <constraint firstAttribute="width" secondItem="cO3-ne-vBk" secondAttribute="height" multiplier="1:1" id="Tdu-6J-bTM"/>
-                                            <constraint firstItem="5dc-lj-KuW" firstAttribute="top" secondItem="cO3-ne-vBk" secondAttribute="top" id="fLE-ck-sFV"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4z-wx-7PG">
-                                        <rect key="frame" x="138" y="0.0" width="122" height="122"/>
-                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="z4z-wx-7PG" secondAttribute="height" multiplier="1:1" id="WvJ-oh-CJ2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                        <state key="normal" title="🥤"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="didTapDrink:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LLz-k4-eVO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBj-Wx-0nL">
-                                        <rect key="frame" x="276" y="0.0" width="122" height="122"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="rBj-Wx-0nL" secondAttribute="height" multiplier="1:1" id="dbp-7M-L65"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                        <state key="normal" title="🥪"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="didTapMeal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aje-aI-hi6"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ro6-3z-WIl">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
-                                <items>
-                                    <navigationItem title="Add Snack" id="A0O-t6-6N7">
-                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="rJV-kc-6Nc">
-                                            <connections>
-                                                <action selector="didTapDone:" destination="BYZ-38-t0r" id="Ojc-vf-5Ii"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="PSc-PT-jt4" firstAttribute="trailing" secondItem="Hzj-fv-EKN" secondAttribute="trailing" constant="8" id="605-X3-2CK"/>
-                            <constraint firstItem="Ro6-3z-WIl" firstAttribute="top" secondItem="PSc-PT-jt4" secondAttribute="top" id="76i-Db-6tI"/>
-                            <constraint firstItem="Hzj-fv-EKN" firstAttribute="top" secondItem="Ro6-3z-WIl" secondAttribute="bottom" constant="12" id="Kj5-yC-8sO"/>
-                            <constraint firstItem="Hzj-fv-EKN" firstAttribute="leading" secondItem="PSc-PT-jt4" secondAttribute="leading" constant="8" id="Vzn-66-5xW"/>
-                            <constraint firstAttribute="trailing" secondItem="Ro6-3z-WIl" secondAttribute="trailing" id="bJs-TR-CUb"/>
-                            <constraint firstItem="Ro6-3z-WIl" firstAttribute="leading" secondItem="PSc-PT-jt4" secondAttribute="leading" id="inI-GO-YPC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="PSc-PT-jt4"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9mU-Jr-dph"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3433" y="117"/>
-        </scene>
         <!--Edit View Controller-->
         <scene sceneID="d0S-fG-ej4">
             <objects>
@@ -123,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HXd-oV-mxC">
-                                <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HXd-oV-mxC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="116.5"/>
                                 <items>
                                     <navigationItem title="🍭" id="WXo-cm-7Sz">
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="h2I-m4-tpQ">
@@ -135,8 +28,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-3o-s3U">
-                                <rect key="frame" x="0.0" y="217" width="414" height="596"/>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-3o-s3U">
+                                <rect key="frame" x="0.0" y="156.5" width="414" height="611.5"/>
                                 <connections>
                                     <action selector="didChangeValue:forEvent:" destination="tri-O6-sfP" eventType="valueChanged" id="YrB-Ys-eaN"/>
                                 </connections>
@@ -162,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMO-Zd-L7D" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3432" y="856"/>
+            <point key="canvasLocation" x="3288" y="128"/>
         </scene>
         <!--Food-->
         <scene sceneID="I2V-h9-Lit">
@@ -171,50 +64,72 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Anr-Xf-I1y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" id="NJW-bp-XFS">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="gas-aB-JbB">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFb-Y6-NJL" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="16" width="132.5" height="70"/>
-                                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adO-i6-IHj">
+                                    <rect key="frame" x="16" y="0.0" width="382" height="130"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-r3-Ndd">
+                                            <rect key="frame" x="8" y="8" width="366" height="114"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sf3-sN-dh6" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="116.5" height="114"/>
+                                                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Sf3-sN-dh6" secondAttribute="height" multiplier="1:1" id="mhx-9t-Nta"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                    <state key="normal" title="🍭"/>
+                                                    <connections>
+                                                        <action selector="didTapSweets:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="11x-Li-t6J"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I1-nY-fJ1" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                                    <rect key="frame" x="124.5" y="0.0" width="117" height="114"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2I1-nY-fJ1" secondAttribute="height" multiplier="1:1" id="M3B-Qk-HUW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                    <state key="normal" title="🥪"/>
+                                                    <connections>
+                                                        <action selector="didTapMeal:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="w1s-sf-NmE"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5W-C6-2mz" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                                    <rect key="frame" x="249.5" y="0.0" width="116.5" height="114"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="x5W-C6-2mz" secondAttribute="height" multiplier="1:1" id="TxM-1a-nV0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                    <state key="normal" title="🥤"/>
+                                                    <connections>
+                                                        <action selector="didTapDrink:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="LhT-ws-xdl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="IFb-Y6-NJL" secondAttribute="height" multiplier="1:1" id="K8q-rx-LlD"/>
+                                        <constraint firstItem="6Z5-r3-Ndd" firstAttribute="leading" secondItem="adO-i6-IHj" secondAttribute="leading" constant="8" id="DaH-ek-fe8"/>
+                                        <constraint firstAttribute="bottom" secondItem="6Z5-r3-Ndd" secondAttribute="bottom" constant="8" id="i0O-vk-6qY"/>
+                                        <constraint firstAttribute="trailing" secondItem="6Z5-r3-Ndd" secondAttribute="trailing" constant="8" id="iQY-q8-hLg"/>
+                                        <constraint firstItem="6Z5-r3-Ndd" firstAttribute="top" secondItem="adO-i6-IHj" secondAttribute="top" constant="8" id="srg-xF-FJg"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                    <state key="normal" title="🍭"/>
-                                    <connections>
-                                        <action selector="didTapSweets:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="jvk-dU-VWP"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyG-Hi-U1t" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                    <rect key="frame" x="140.5" y="16" width="133" height="70"/>
-                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="GyG-Hi-U1t" secondAttribute="height" multiplier="1:1" id="ZfB-Pf-1VG"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                    <state key="normal" title="🥪"/>
-                                    <connections>
-                                        <action selector="didTapMeal:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="Ye6-MV-54t"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKC-Cs-ce1" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                    <rect key="frame" x="281.5" y="16" width="132.5" height="70"/>
-                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="CKC-Cs-ce1" secondAttribute="height" multiplier="1:1" id="P9y-pT-o3C"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                    <state key="normal" title="🥤"/>
-                                    <connections>
-                                        <action selector="didTapDrink:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="cRy-rI-uGC"/>
-                                    </connections>
-                                </button>
+                                </view>
                             </subviews>
-                        </stackView>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="adO-i6-IHj" secondAttribute="bottom" id="Teb-qt-liA"/>
+                                <constraint firstItem="adO-i6-IHj" firstAttribute="top" secondItem="gas-aB-JbB" secondAttribute="top" id="VOv-AW-jEq"/>
+                                <constraint firstItem="adO-i6-IHj" firstAttribute="leading" secondItem="gas-aB-JbB" secondAttribute="leading" constant="16" id="Vzk-Yj-cUN"/>
+                                <constraint firstAttribute="trailing" secondItem="adO-i6-IHj" secondAttribute="trailing" constant="16" id="ccr-aA-Uwr"/>
+                            </constraints>
+                        </view>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the Today Widget to add items quickly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UsR-ho-IK2">
-                            <rect key="frame" x="0.0" y="230.5" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="258.5" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -222,7 +137,7 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="trackedItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackedItem" id="e6M-dl-3ci" customClass="ItemTableViewCell" customModule="Snacked" customModuleProvider="target">
-                                <rect key="frame" x="20" y="157.5" width="374" height="55"/>
+                                <rect key="frame" x="20" y="185.5" width="374" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6M-dl-3ci" id="eJI-6y-v8c">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
@@ -278,11 +193,6 @@
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="Add Item" image="plus.circle.fill" catalog="system" id="KD4-lV-7Co">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showEntry" modalPresentationStyle="formSheet" id="kjx-TK-bAt"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMK-VH-95J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -308,7 +218,4 @@
             <point key="canvasLocation" x="1608.6956521739132" y="127.90178571428571"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
-    </resources>
 </document>

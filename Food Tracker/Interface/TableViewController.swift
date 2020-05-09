@@ -15,10 +15,10 @@ class TableViewController:UITableViewController {
     @IBAction func didTapSweets(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.sweets, shouldUpdate: false)
         tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
-        //tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
     }
     
     @IBAction func didTapMeal(_ sender: Any) {
+        viewModel.shouldReload()
         viewModel.didTap(itemCategory:ItemCategory.meal, shouldUpdate: false)
         tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
     }
