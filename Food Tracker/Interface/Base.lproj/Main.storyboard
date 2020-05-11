@@ -65,20 +65,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="gas-aB-JbB">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="187"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adO-i6-IHj">
-                                    <rect key="frame" x="8" y="0.0" width="398" height="187"/>
+                                    <rect key="frame" x="8" y="0.0" width="398" height="200"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D4d-kI-ZP0">
-                                            <rect key="frame" x="16" y="0.0" width="366" height="187"/>
+                                            <rect key="frame" x="8" y="0.0" width="382" height="184"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-r3-Ndd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="123"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="120"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sf3-sN-dh6" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="116.5" height="123"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="122" height="120"/>
                                                             <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Sf3-sN-dh6" secondAttribute="height" multiplier="1:1" id="mhx-9t-Nta"/>
@@ -90,7 +90,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I1-nY-fJ1" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                                            <rect key="frame" x="124.5" y="0.0" width="117" height="123"/>
+                                                            <rect key="frame" x="130" y="0.0" width="122" height="120"/>
                                                             <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="2I1-nY-fJ1" secondAttribute="height" multiplier="1:1" id="M3B-Qk-HUW"/>
@@ -102,7 +102,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5W-C6-2mz" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                                            <rect key="frame" x="249.5" y="0.0" width="116.5" height="123"/>
+                                                            <rect key="frame" x="260" y="0.0" width="122" height="120"/>
                                                             <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="x5W-C6-2mz" secondAttribute="height" multiplier="1:1" id="TxM-1a-nV0"/>
@@ -116,19 +116,22 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwP-wV-TAU">
-                                                    <rect key="frame" x="0.0" y="123" width="366" height="64"/>
+                                                    <rect key="frame" x="0.0" y="120" width="382" height="64"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-oP-HiB">
-                                                            <rect key="frame" x="16" y="16" width="334" height="32"/>
+                                                            <rect key="frame" x="16" y="16" width="350" height="32"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log to Health App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-n1-kwq">
-                                                                    <rect key="frame" x="0.0" y="6" width="285" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="6" width="301" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKq-vc-a6h">
-                                                                    <rect key="frame" x="285" y="0.5" width="51" height="31"/>
+                                                                    <rect key="frame" x="301" y="0.5" width="51" height="31"/>
+                                                                    <connections>
+                                                                        <action selector="didToggleHealthLogSwitch:forEvent:" destination="Cpc-9w-UGc" eventType="valueChanged" id="slH-o3-FHm"/>
+                                                                    </connections>
                                                                 </switch>
                                                             </subviews>
                                                         </stackView>
@@ -145,10 +148,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="D4d-kI-ZP0" secondAttribute="bottom" id="FVV-ZM-n06"/>
+                                        <constraint firstAttribute="bottom" secondItem="D4d-kI-ZP0" secondAttribute="bottom" constant="16" id="FVV-ZM-n06"/>
                                         <constraint firstItem="D4d-kI-ZP0" firstAttribute="top" secondItem="adO-i6-IHj" secondAttribute="top" id="ead-0S-zVz"/>
-                                        <constraint firstAttribute="trailing" secondItem="D4d-kI-ZP0" secondAttribute="trailing" constant="16" id="psA-I1-KKD"/>
-                                        <constraint firstItem="D4d-kI-ZP0" firstAttribute="leading" secondItem="adO-i6-IHj" secondAttribute="leading" constant="16" id="sfl-94-tTI"/>
+                                        <constraint firstAttribute="trailing" secondItem="D4d-kI-ZP0" secondAttribute="trailing" constant="8" id="psA-I1-KKD"/>
+                                        <constraint firstItem="D4d-kI-ZP0" firstAttribute="leading" secondItem="adO-i6-IHj" secondAttribute="leading" constant="8" id="sfl-94-tTI"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -160,7 +163,7 @@
                             </constraints>
                         </view>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the Today Widget to add items quickly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UsR-ho-IK2">
-                            <rect key="frame" x="0.0" y="315.5" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="328.5" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -168,7 +171,7 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="trackedItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackedItem" id="e6M-dl-3ci" customClass="ItemTableViewCell" customModule="Snacked" customModuleProvider="target">
-                                <rect key="frame" x="20" y="242.5" width="374" height="55"/>
+                                <rect key="frame" x="20" y="255.5" width="374" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6M-dl-3ci" id="eJI-6y-v8c">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
@@ -225,6 +228,9 @@
                             </barButtonItem>
                         </leftBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="healthLogSwitch" destination="uKq-vc-a6h" id="N1Y-uD-bzA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMK-VH-95J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,7 +242,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b9i-cM-dBO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cxH-3O-iPb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

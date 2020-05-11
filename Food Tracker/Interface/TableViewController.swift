@@ -11,22 +11,32 @@ import TrackerKit
 
 class TableViewController:UITableViewController {
     var viewModel:ViewModel!
+    var healthViewModel:HealthViewModel = HealthViewModel()
 
+    @IBAction func didToggleHealthLogSwitch(_ sender: Any, forEvent event: UIEvent) {
+        healthViewModel.didTapSwitch()
+    }
+    
+    @IBOutlet weak var healthLogSwitch: UISwitch!
+    
     @IBAction func didTapSweets(_ sender: Any) {
         print("new \(viewModel.state.items.count)")
         viewModel.didTap(itemCategory:ItemCategory.sweets, shouldUpdate: false)
         tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+        healthViewModel.didTapToAdd(itemCategory: .sweets)
     }
     
     @IBAction func didTapMeal(_ sender: Any) {
         viewModel.shouldReload()
         viewModel.didTap(itemCategory:ItemCategory.meal, shouldUpdate: false)
         tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+        healthViewModel.didTapToAdd(itemCategory: .meal)
     }
     
     @IBAction func didTapDrink(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.drink, shouldUpdate: false)
         tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+        healthViewModel.didTapToAdd(itemCategory: .drink)
     }
     
     @IBAction func didTapEdit(_ sender: UIBarButtonItem) {
@@ -48,8 +58,6 @@ class TableViewController:UITableViewController {
             print("\(state)")
             self.tableView.reloadData()
         })
-        print("\(viewModel.state)")
-        //self.tableView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(shouldReload), name: UIApplication.willEnterForegroundNotification, object: nil)
             shouldReload()
     }
@@ -68,6 +76,9 @@ class TableViewController:UITableViewController {
         super.viewWillAppear(animated)
         print("-------Table Will Appear-------")
         print("Items \(viewModel.state.items.count)")
+        
+        
+        healthLogSwitch.isOn = healthViewModel.isSwitchOn()
     }
     
     // MARK: - Show Entry View Segue

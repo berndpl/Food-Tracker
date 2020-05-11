@@ -11,10 +11,13 @@ import Foundation
 struct key {
     static let appGroup = "group.de.plontsch.food-tracker.shared"
     static let fileName = "items.json"
+    static let log = "healthlog_enabled"
 }
 
 public class Storage {
-
+    
+    // MARK: - Data
+    
     class func filePath()->URL {
         guard let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: key.appGroup) else {
             do {
@@ -63,6 +66,28 @@ public class Storage {
         catch { print("No File Loaded") }
             
         return nil
+    }
+    
+    // MARK: - User Default Health Log
+
+    public class func toggleHealthLog(isEnabled:Bool) {
+        UserDefaults(suiteName: key.appGroup)!.set(isEnabled, forKey: key.log)
+        UserDefaults(suiteName: key.appGroup)!.synchronize()
+        print("[Default] Toggle Caffeine Log \(UserDefaults(suiteName: key.appGroup)!.bool(forKey: key.log))")
+    }
+    
+    public class func isHealthLogStateDetermined()->Bool {
+        if let _:Bool = UserDefaults(suiteName: key.appGroup)!.object(forKey: key.log) as? Bool {
+            return true
+        }
+        return false
+    }
+    
+    public class func isHealthLogEnabled()->Bool {
+        if let setting:Bool = UserDefaults(suiteName: key.appGroup)!.object(forKey: key.log) as? Bool {
+            return setting
+        }
+        return false
     }
         
 }

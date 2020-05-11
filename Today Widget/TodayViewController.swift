@@ -13,6 +13,7 @@ import TrackerKit
 class TodayViewController: UIViewController, NCWidgetProviding {
         
     var viewModel:ViewModel!
+    var healthViewModel:HealthViewModel = HealthViewModel()
     
     @IBOutlet weak var sweetsButton: SnackButton!
     @IBOutlet weak var mealButton: SnackButton!
@@ -20,14 +21,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBAction func didTapSweets(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.sweets, shouldUpdate: true)
+        healthViewModel.didTapToAdd(itemCategory: .sweets)
     }
     
     @IBAction func didTapMeal(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.meal, shouldUpdate: true)
+        healthViewModel.didTapToAdd(itemCategory: .meal)
     }
     
     @IBAction func didTapDrink(_ sender: Any) {
         viewModel.didTap(itemCategory:ItemCategory.drink, shouldUpdate: true)
+        healthViewModel.didTapToAdd(itemCategory: .drink)
     }
     
     override func viewDidLoad() {

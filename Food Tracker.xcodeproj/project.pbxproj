@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8906769624698F2100D788DB /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906769324698F2000D788DB /* HealthStore.swift */; };
+		8906769824698F2100D788DB /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906769524698F2000D788DB /* HealthViewModel.swift */; };
+		8906769A2469984300D788DB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890676992469984300D788DB /* HealthKit.framework */; };
+		8906769C2469A3B900D788DB /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906769324698F2000D788DB /* HealthStore.swift */; };
+		8906769D2469A3BC00D788DB /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906769524698F2000D788DB /* HealthViewModel.swift */; };
+		8906769E2469A54000D788DB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890676992469984300D788DB /* HealthKit.framework */; };
 		8915D5F124693A8800F2E7CE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8915D5F024693A8800F2E7CE /* File.swift */; };
 		894281B12465CA7E0052F788 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894281B02465CA7E0052F788 /* Date+Extension.swift */; };
 		894281B22465D5630052F788 /* SnackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C6F246578AB009D1105 /* SnackButton.swift */; };
@@ -100,6 +106,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8906769324698F2000D788DB /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		8906769524698F2000D788DB /* HealthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
+		890676992469984300D788DB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8915D5F024693A8800F2E7CE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		894281B02465CA7E0052F788 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		896E1187246410E400E55E84 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -157,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A208B22462E96E00E2914A /* NotificationCenter.framework in Frameworks */,
+				8906769E2469A54000D788DB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A2094A24630EA200E2914A /* TrackerKit.framework in Frameworks */,
+				8906769A2469984300D788DB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +197,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8906769B2469A3AF00D788DB /* Shared Health */ = {
+			isa = PBXGroup;
+			children = (
+				8906769324698F2000D788DB /* HealthStore.swift */,
+				8906769524698F2000D788DB /* HealthViewModel.swift */,
+			);
+			path = "Shared Health";
+			sourceTree = "<group>";
+		};
 		896E118D2464173A00E55E84 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +232,7 @@
 		89A208B02462E96E00E2914A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				890676992469984300D788DB /* HealthKit.framework */,
 				89A208B12462E96E00E2914A /* NotificationCenter.framework */,
 				899B4AD62465089F00FBD4F5 /* UserNotifications.framework */,
 				899B4AD82465089F00FBD4F5 /* UserNotificationsUI.framework */,
@@ -237,6 +258,7 @@
 				896E118D2464173A00E55E84 /* Interface */,
 				89A2092A2463039D00E2914A /* Assets.xcassets */,
 				89A209212463039A00E2914A /* AppDelegate.swift */,
+				8906769B2469A3AF00D788DB /* Shared Health */,
 				89A209232463039A00E2914A /* SceneDelegate.swift */,
 				896E1187246410E400E55E84 /* Date+Extension.swift */,
 				89A2092C2463039D00E2914A /* LaunchScreen.storyboard */,
@@ -509,6 +531,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BF3C70246578AB009D1105 /* SnackButton.swift in Sources */,
+				8906769C2469A3B900D788DB /* HealthStore.swift in Sources */,
+				8906769D2469A3BC00D788DB /* HealthViewModel.swift in Sources */,
 				89A208B52462E96E00E2914A /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +548,8 @@
 				89A2095B2463357100E2914A /* ItemTableViewCell.swift in Sources */,
 				89A209242463039A00E2914A /* SceneDelegate.swift in Sources */,
 				896E118C246412BA00E55E84 /* Date+Extension.swift in Sources */,
+				8906769624698F2100D788DB /* HealthStore.swift in Sources */,
+				8906769824698F2100D788DB /* HealthViewModel.swift in Sources */,
 				89BF3C722465AF44009D1105 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
