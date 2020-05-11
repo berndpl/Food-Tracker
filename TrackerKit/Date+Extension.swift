@@ -17,4 +17,12 @@ extension Date {
         return Calendar.current.isDateInYesterday(self)
     }
 
+    func daysFromNow(days:Int)->Date {
+        return Calendar.current.date(byAdding: .day, value: days, to: self)!
+    }
+    
+    func yesterday()->Date {
+        return daysFromNow(days: -1)
+    }
+
 }

@@ -65,71 +65,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="gas-aB-JbB">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="187"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adO-i6-IHj">
-                                    <rect key="frame" x="16" y="0.0" width="382" height="130"/>
+                                    <rect key="frame" x="8" y="0.0" width="398" height="187"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-r3-Ndd">
-                                            <rect key="frame" x="8" y="8" width="366" height="114"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D4d-kI-ZP0">
+                                            <rect key="frame" x="16" y="0.0" width="366" height="187"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sf3-sN-dh6" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="116.5" height="114"/>
-                                                    <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-r3-Ndd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="123"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sf3-sN-dh6" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="116.5" height="123"/>
+                                                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Sf3-sN-dh6" secondAttribute="height" multiplier="1:1" id="mhx-9t-Nta"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                            <state key="normal" title="🍭"/>
+                                                            <connections>
+                                                                <action selector="didTapSweets:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="11x-Li-t6J"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I1-nY-fJ1" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                                            <rect key="frame" x="124.5" y="0.0" width="117" height="123"/>
+                                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="2I1-nY-fJ1" secondAttribute="height" multiplier="1:1" id="M3B-Qk-HUW"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                            <state key="normal" title="🥪"/>
+                                                            <connections>
+                                                                <action selector="didTapMeal:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="w1s-sf-NmE"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5W-C6-2mz" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
+                                                            <rect key="frame" x="249.5" y="0.0" width="116.5" height="123"/>
+                                                            <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="x5W-C6-2mz" secondAttribute="height" multiplier="1:1" id="TxM-1a-nV0"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                                            <state key="normal" title="🥤"/>
+                                                            <connections>
+                                                                <action selector="didTapDrink:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="LhT-ws-xdl"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwP-wV-TAU">
+                                                    <rect key="frame" x="0.0" y="123" width="366" height="64"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-oP-HiB">
+                                                            <rect key="frame" x="16" y="16" width="334" height="32"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log to Health App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-n1-kwq">
+                                                                    <rect key="frame" x="0.0" y="6" width="285" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKq-vc-a6h">
+                                                                    <rect key="frame" x="285" y="0.5" width="51" height="31"/>
+                                                                </switch>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Sf3-sN-dh6" secondAttribute="height" multiplier="1:1" id="mhx-9t-Nta"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Edb-oP-HiB" secondAttribute="bottom" constant="16" id="Cvm-Nf-nhH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Edb-oP-HiB" secondAttribute="trailing" constant="16" id="J0n-Q5-YPd"/>
+                                                        <constraint firstItem="Edb-oP-HiB" firstAttribute="top" secondItem="UwP-wV-TAU" secondAttribute="top" constant="16" id="Jh4-vY-9t9"/>
+                                                        <constraint firstItem="Edb-oP-HiB" firstAttribute="leading" secondItem="UwP-wV-TAU" secondAttribute="leading" constant="16" id="Kev-1S-q5y"/>
+                                                        <constraint firstAttribute="height" constant="64" id="WOP-vM-hGs"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                    <state key="normal" title="🍭"/>
-                                                    <connections>
-                                                        <action selector="didTapSweets:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="11x-Li-t6J"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I1-nY-fJ1" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                                    <rect key="frame" x="124.5" y="0.0" width="117" height="114"/>
-                                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="2I1-nY-fJ1" secondAttribute="height" multiplier="1:1" id="M3B-Qk-HUW"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                    <state key="normal" title="🥪"/>
-                                                    <connections>
-                                                        <action selector="didTapMeal:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="w1s-sf-NmE"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5W-C6-2mz" customClass="SnackButton" customModule="Snacked" customModuleProvider="target">
-                                                    <rect key="frame" x="249.5" y="0.0" width="116.5" height="114"/>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="x5W-C6-2mz" secondAttribute="height" multiplier="1:1" id="TxM-1a-nV0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                    <state key="normal" title="🥤"/>
-                                                    <connections>
-                                                        <action selector="didTapDrink:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="LhT-ws-xdl"/>
-                                                    </connections>
-                                                </button>
+                                                </view>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="6Z5-r3-Ndd" firstAttribute="leading" secondItem="adO-i6-IHj" secondAttribute="leading" constant="8" id="DaH-ek-fe8"/>
-                                        <constraint firstAttribute="bottom" secondItem="6Z5-r3-Ndd" secondAttribute="bottom" constant="8" id="i0O-vk-6qY"/>
-                                        <constraint firstAttribute="trailing" secondItem="6Z5-r3-Ndd" secondAttribute="trailing" constant="8" id="iQY-q8-hLg"/>
-                                        <constraint firstItem="6Z5-r3-Ndd" firstAttribute="top" secondItem="adO-i6-IHj" secondAttribute="top" constant="8" id="srg-xF-FJg"/>
+                                        <constraint firstAttribute="bottom" secondItem="D4d-kI-ZP0" secondAttribute="bottom" id="FVV-ZM-n06"/>
+                                        <constraint firstItem="D4d-kI-ZP0" firstAttribute="top" secondItem="adO-i6-IHj" secondAttribute="top" id="ead-0S-zVz"/>
+                                        <constraint firstAttribute="trailing" secondItem="D4d-kI-ZP0" secondAttribute="trailing" constant="16" id="psA-I1-KKD"/>
+                                        <constraint firstItem="D4d-kI-ZP0" firstAttribute="leading" secondItem="adO-i6-IHj" secondAttribute="leading" constant="16" id="sfl-94-tTI"/>
                                     </constraints>
                                 </view>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="adO-i6-IHj" secondAttribute="bottom" id="Teb-qt-liA"/>
                                 <constraint firstItem="adO-i6-IHj" firstAttribute="top" secondItem="gas-aB-JbB" secondAttribute="top" id="VOv-AW-jEq"/>
-                                <constraint firstItem="adO-i6-IHj" firstAttribute="leading" secondItem="gas-aB-JbB" secondAttribute="leading" constant="16" id="Vzk-Yj-cUN"/>
-                                <constraint firstAttribute="trailing" secondItem="adO-i6-IHj" secondAttribute="trailing" constant="16" id="ccr-aA-Uwr"/>
+                                <constraint firstItem="adO-i6-IHj" firstAttribute="leading" secondItem="gas-aB-JbB" secondAttribute="leadingMargin" id="Vzk-Yj-cUN"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="adO-i6-IHj" secondAttribute="trailing" id="ccr-aA-Uwr"/>
                             </constraints>
                         </view>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the Today Widget to add items quickly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UsR-ho-IK2">
-                            <rect key="frame" x="0.0" y="258.5" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="315.5" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,7 +168,7 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="trackedItem" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackedItem" id="e6M-dl-3ci" customClass="ItemTableViewCell" customModule="Snacked" customModuleProvider="target">
-                                <rect key="frame" x="20" y="185.5" width="374" height="55"/>
+                                <rect key="frame" x="20" y="242.5" width="374" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6M-dl-3ci" id="eJI-6y-v8c">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
@@ -205,7 +236,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b9i-cM-dBO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cxH-3O-iPb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

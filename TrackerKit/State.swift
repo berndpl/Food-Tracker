@@ -14,7 +14,7 @@ public struct State:Codable, CustomDebugStringConvertible {
     public var debugDescription:String {
         return "[State] Items \(items.count)"
     }
-
+    
     public func countLabel(itemCategory:ItemCategory)->String {
         let counted = count(itemCategory: itemCategory)
         return counted == 0 ? "" : "\(counted)"
@@ -32,32 +32,28 @@ public struct State:Codable, CustomDebugStringConvertible {
         return count(itemCategory: itemCategory) > 0 ? false : true
     }
 
+    // MARK: - TableView
     
-    public func itemSections()->[[Item]] {
-        var sections:[[Item]] = []            
-
-        let itemsSortedByDate = items.sorted { (itemA, itemB) -> Bool in
-            return itemA.createDate.compare(itemB.createDate) == .orderedDescending
-        }
-        
-        let itemsToday = itemsSortedByDate.filter { Calendar.current.isDateInToday($0.createDate) }
-        if itemsToday.count > 0 {
-            sections.append(itemsToday)
-        }
-        
-        let itemsYesterday = itemsSortedByDate.filter { Calendar.current.isDateInYesterday($0.createDate) }
-        if itemsYesterday.count > 0 {
-            sections.append(itemsYesterday)
-        }
-        
-        let earlierItems = itemsSortedByDate.filter { !Calendar.current.isDateInYesterday($0.createDate) && !Calendar.current.isDateInToday($0.createDate) }
-        if earlierItems.count > 0 {
-            sections.append(earlierItems)
-        }
-        
-        //sections.append(itemsSortedByDate)
-        
-        return sections
-    }
+//    public func items()->[[Item]] {
+//        var sections:[[Item]] = [[Item]]()
+//
+//        let itemsSortedByDate = items.sorted { (itemA, itemB) -> Bool in
+//            return itemA.createDate.compare(itemB.createDate) == .orderedDescending
+//        }
+//
+//        let itemsToday = itemsSortedByDate.filter { Calendar.current.isDateInToday($0.createDate) }
+//        let itemsYesterday = itemsSortedByDate.filter { $0.createDate < $0.createDate.daysFromNow(days: -1) }
+//        let earlierItems = itemsSortedByDate.filter { $0.createDate < $0.createDate.daysFromNow(days: -2) }
+//
+//        sections.append(itemsToday)
+//        sections.append(itemsYesterday)
+//        sections.append(earlierItems)
+//
+//        //listItems = ListItems(itemsToday, itemsYesterday, earlierItems)
+//
+//        //sections.append(itemsSortedByDate)
+//
+//        return sections
+//    }
     
 }

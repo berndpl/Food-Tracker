@@ -11,7 +11,7 @@ import Foundation
 public class ViewModel:NSObject {
     var callback: ((State) -> Void)
     
-    public var state: State = State(items: allItems()) {
+    public var state: State = State(items: []) {
         didSet {
             print("Callback!")
             //callback(state)
@@ -22,15 +22,21 @@ public class ViewModel:NSObject {
         self.callback = callback
     }
     
-    public func didTap(itemCategory:ItemCategory, shouldUpdate:Bool=false) {
-        let newItem = Item(itemCategory: itemCategory, date: Date())
-        print("Add \(newItem)")
-        state.items.append(newItem)
+    public func didTap(itemCategory:ItemCategory, shouldUpdate:Bool=true, date:Date=Date()) {
+        addItem(itemCategory: itemCategory)
         Storage.save(state: state)
-        shouldReload()
+        //shouldReload()
         if shouldUpdate {
             callback(state)
         }
+    }
+    
+    func addItem(itemCategory: ItemCategory) {
+        print("ADD")
+        let newItem = Item(itemCategory: itemCategory, date: Date())
+        print("Before \(state.items.count)")
+        state.items.insert(newItem, at: 0)
+        print("After \(state.items.count)")
     }
     
     public func didTapDeleteItem(section:Int, item:Int) {
@@ -49,7 +55,7 @@ public class ViewModel:NSObject {
     
     
     public func selectedItem(section:Int, item:Int)->Item {
-        let item = state.itemSections()[section][item]
+        let item = state.items[item]
         return item
     }
     

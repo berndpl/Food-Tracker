@@ -13,6 +13,7 @@ class TableViewController:UITableViewController {
     var viewModel:ViewModel!
 
     @IBAction func didTapSweets(_ sender: Any) {
+        print("new \(viewModel.state.items.count)")
         viewModel.didTap(itemCategory:ItemCategory.sweets, shouldUpdate: false)
         tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
     }
@@ -66,7 +67,7 @@ class TableViewController:UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("-------Table Will Appear-------")
-        print("Sections \(viewModel.state.itemSections().count) Items \(viewModel.state.items.count)")
+        print("Items \(viewModel.state.items.count)")
     }
     
     // MARK: - Show Entry View Segue
@@ -86,41 +87,12 @@ class TableViewController:UITableViewController {
     
     // MARK: - Table view data source
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if viewModel.state.itemSections().count > 0 {
-            let itemSection:[Item] = viewModel.state.itemSections()[section]
-            return "\(itemSection.first!.createDate.shortRelative)"
-        } else {
-            return nil
-        }
-    }
-    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let label = UILabel()
-//        if viewModel.state.itemSections().count > 0 {
-//            let itemSection:[Item] = viewModel.state.itemSections()[section]
-//            label.text = "\(itemSection.first!.createDate.shortRelative)"
-//        }
-//        label.sizeToFit()
-//        return label
-//    }
-//    
-//    override func tableView(_ tableView: UITableView,
-//                   heightForHeaderInSection section: Int) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
-//
-//    override func tableView(_ tableView: UITableView,
-//                   estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-//        return 50.0
-//    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.state.itemSections().count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.state.itemSections()[section].count
+        return viewModel.state.items.count
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -130,7 +102,6 @@ class TableViewController:UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Delete \(editingStyle) \(indexPath)")
-            
             viewModel.didTapDeleteItem(section:indexPath.section, item:indexPath.item)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
@@ -138,7 +109,7 @@ class TableViewController:UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackedItem", for: indexPath) as! ItemTableViewCell
-        let item:Item = viewModel.state.itemSections()[indexPath.section][indexPath.row] //viewModel.state.items[indexPath.row]
+        let item:Item = viewModel.state.items[indexPath.item] //viewModel.state.items[indexPath.row]
         cell.itemCategoryLabel.text = ("\(item.itemCategory)")
         cell.dateLabel.text = item.createDate.shortRelativeWithTime
         cell.item = item

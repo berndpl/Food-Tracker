@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8915D5F124693A8800F2E7CE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8915D5F024693A8800F2E7CE /* File.swift */; };
 		894281B12465CA7E0052F788 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894281B02465CA7E0052F788 /* Date+Extension.swift */; };
 		894281B22465D5630052F788 /* SnackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C6F246578AB009D1105 /* SnackButton.swift */; };
 		896E118C246412BA00E55E84 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E1187246410E400E55E84 /* Date+Extension.swift */; };
@@ -37,6 +38,8 @@
 		89A2095B2463357100E2914A /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095A2463357100E2914A /* ItemTableViewCell.swift */; };
 		89BF3C70246578AB009D1105 /* SnackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C6F246578AB009D1105 /* SnackButton.swift */; };
 		89BF3C722465AF44009D1105 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C712465AF44009D1105 /* EditViewController.swift */; };
+		89E44D7B2468DCAE00563C2C /* TrackerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E44D7A2468DCAE00563C2C /* TrackerKitTests.swift */; };
+		89E44D7D2468DCAE00563C2C /* TrackerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A2094324630EA200E2914A /* TrackerKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,13 @@
 			remoteInfo = "Today Widget";
 		};
 		89A2094824630EA200E2914A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89E8E7C02462B32D00CE340B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89A2094224630EA200E2914A;
+			remoteInfo = TrackerKit;
+		};
+		89E44D7E2468DCAE00563C2C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 89E8E7C02462B32D00CE340B /* Project object */;
 			proxyType = 1;
@@ -90,6 +100,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8915D5F024693A8800F2E7CE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		894281B02465CA7E0052F788 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		896E1187246410E400E55E84 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8986E9EE2463A17A0035C940 /* Today Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Today Widget.entitlements"; sourceTree = "<group>"; };
@@ -126,6 +137,9 @@
 		89A2095A2463357100E2914A /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		89BF3C6F246578AB009D1105 /* SnackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackButton.swift; sourceTree = "<group>"; };
 		89BF3C712465AF44009D1105 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		89E44D782468DCAE00563C2C /* TrackerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89E44D7A2468DCAE00563C2C /* TrackerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerKitTests.swift; sourceTree = "<group>"; };
+		89E44D7C2468DCAE00563C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +172,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89E44D752468DCAD00563C2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E44D7D2468DCAE00563C2C /* TrackerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,12 +253,22 @@
 				89A2094624630EA200E2914A /* Info.plist */,
 				89A2095024630EBD00E2914A /* Item.swift */,
 				89A2095124630EBD00E2914A /* State.swift */,
+				8915D5F024693A8800F2E7CE /* File.swift */,
 				89A2095224630EBD00E2914A /* Storage.swift */,
 				89A2094F24630EBD00E2914A /* ViewModel.swift */,
 				894281B02465CA7E0052F788 /* Date+Extension.swift */,
 				899B4AE824650C3B00FBD4F5 /* LocalNotification.swift */,
 			);
 			path = TrackerKit;
+			sourceTree = "<group>";
+		};
+		89E44D792468DCAE00563C2C /* TrackerKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				89E44D7A2468DCAE00563C2C /* TrackerKitTests.swift */,
+				89E44D7C2468DCAE00563C2C /* Info.plist */,
+			);
+			path = TrackerKitTests;
 			sourceTree = "<group>";
 		};
 		89E8E7BF2462B32D00CE340B = {
@@ -246,6 +278,7 @@
 				89A208B32462E96E00E2914A /* Today Widget */,
 				89A2094424630EA200E2914A /* TrackerKit */,
 				899B4ADA2465089F00FBD4F5 /* Notification */,
+				89E44D792468DCAE00563C2C /* TrackerKitTests */,
 				89A208B02462E96E00E2914A /* Frameworks */,
 				89E8E7C92462B32D00CE340B /* Products */,
 			);
@@ -258,6 +291,7 @@
 				89A2091F2463039A00E2914A /* Snacked.app */,
 				89A2094324630EA200E2914A /* TrackerKit.framework */,
 				899B4AD52465089F00FBD4F5 /* Notification.appex */,
+				89E44D782468DCAE00563C2C /* TrackerKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -350,6 +384,24 @@
 			productReference = 89A2094324630EA200E2914A /* TrackerKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		89E44D772468DCAD00563C2C /* TrackerKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89E44D822468DCAE00563C2C /* Build configuration list for PBXNativeTarget "TrackerKitTests" */;
+			buildPhases = (
+				89E44D742468DCAD00563C2C /* Sources */,
+				89E44D752468DCAD00563C2C /* Frameworks */,
+				89E44D762468DCAD00563C2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89E44D7F2468DCAE00563C2C /* PBXTargetDependency */,
+			);
+			name = TrackerKitTests;
+			productName = TrackerKitTests;
+			productReference = 89E44D782468DCAE00563C2C /* TrackerKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -373,6 +425,9 @@
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
 					};
+					89E44D772468DCAD00563C2C = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 89E8E7C32462B32D00CE340B /* Build configuration list for PBXProject "Food Tracker" */;
@@ -392,6 +447,7 @@
 				89A2094224630EA200E2914A /* TrackerKit */,
 				89A208AE2462E96E00E2914A /* Today Widget */,
 				899B4AD42465089F00FBD4F5 /* Notification */,
+				89E44D772468DCAD00563C2C /* TrackerKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -424,6 +480,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		89A2094124630EA200E2914A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89E44D762468DCAD00563C2C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -471,10 +534,19 @@
 			files = (
 				89A2095424630EBD00E2914A /* Item.swift in Sources */,
 				89A2095624630EBD00E2914A /* Storage.swift in Sources */,
+				8915D5F124693A8800F2E7CE /* File.swift in Sources */,
 				89A2095324630EBD00E2914A /* ViewModel.swift in Sources */,
 				899B4AE924650C3B00FBD4F5 /* LocalNotification.swift in Sources */,
 				89A2095524630EBD00E2914A /* State.swift in Sources */,
 				894281B12465CA7E0052F788 /* Date+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89E44D742468DCAD00563C2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E44D7B2468DCAE00563C2C /* TrackerKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +567,11 @@
 			isa = PBXTargetDependency;
 			target = 89A2094224630EA200E2914A /* TrackerKit */;
 			targetProxy = 89A2094824630EA200E2914A /* PBXContainerItemProxy */;
+		};
+		89E44D7F2468DCAE00563C2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89A2094224630EA200E2914A /* TrackerKit */;
+			targetProxy = 89E44D7E2468DCAE00563C2C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -713,6 +790,42 @@
 			};
 			name = Release;
 		};
+		89E44D802468DCAE00563C2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DNKZNVGEK5;
+				INFOPLIST_FILE = TrackerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.plontsch.TrackerKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89E44D812468DCAE00563C2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DNKZNVGEK5;
+				INFOPLIST_FILE = TrackerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.plontsch.TrackerKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		89E8E7DA2462B33200CE340B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -864,6 +977,15 @@
 			buildConfigurations = (
 				89A2094D24630EA200E2914A /* Debug */,
 				89A2094E24630EA200E2914A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89E44D822468DCAE00563C2C /* Build configuration list for PBXNativeTarget "TrackerKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89E44D802468DCAE00563C2C /* Debug */,
+				89E44D812468DCAE00563C2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
