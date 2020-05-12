@@ -44,6 +44,7 @@
 		89A2095B2463357100E2914A /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2095A2463357100E2914A /* ItemTableViewCell.swift */; };
 		89BF3C70246578AB009D1105 /* SnackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C6F246578AB009D1105 /* SnackButton.swift */; };
 		89BF3C722465AF44009D1105 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF3C712465AF44009D1105 /* EditViewController.swift */; };
+		89C65677246AD8100018FA77 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C65676246AD8100018FA77 /* RoundedButton.swift */; };
 		89E44D7B2468DCAE00563C2C /* TrackerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E44D7A2468DCAE00563C2C /* TrackerKitTests.swift */; };
 		89E44D7D2468DCAE00563C2C /* TrackerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A2094324630EA200E2914A /* TrackerKit.framework */; };
 /* End PBXBuildFile section */
@@ -146,6 +147,7 @@
 		89A2095A2463357100E2914A /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		89BF3C6F246578AB009D1105 /* SnackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackButton.swift; sourceTree = "<group>"; };
 		89BF3C712465AF44009D1105 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		89C65676246AD8100018FA77 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		89E44D782468DCAE00563C2C /* TrackerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E44D7A2468DCAE00563C2C /* TrackerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerKitTests.swift; sourceTree = "<group>"; };
 		89E44D7C2468DCAE00563C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -245,8 +247,8 @@
 			children = (
 				8986E9EE2463A17A0035C940 /* Today Widget.entitlements */,
 				89A208B42462E96E00E2914A /* TodayViewController.swift */,
-				89BF3C6F246578AB009D1105 /* SnackButton.swift */,
 				89A208B62462E96E00E2914A /* MainInterface.storyboard */,
+				89C65678246AD8280018FA77 /* Shared UI */,
 				89A208B92462E96E00E2914A /* Info.plist */,
 			);
 			path = "Today Widget";
@@ -282,6 +284,15 @@
 				899B4AE824650C3B00FBD4F5 /* LocalNotification.swift */,
 			);
 			path = TrackerKit;
+			sourceTree = "<group>";
+		};
+		89C65678246AD8280018FA77 /* Shared UI */ = {
+			isa = PBXGroup;
+			children = (
+				89C65676246AD8100018FA77 /* RoundedButton.swift */,
+				89BF3C6F246578AB009D1105 /* SnackButton.swift */,
+			);
+			path = "Shared UI";
 			sourceTree = "<group>";
 		};
 		89E44D792468DCAE00563C2C /* TrackerKitTests */ = {
@@ -547,6 +558,7 @@
 				89A209342463084E00E2914A /* TableViewController.swift in Sources */,
 				89A2095B2463357100E2914A /* ItemTableViewCell.swift in Sources */,
 				89A209242463039A00E2914A /* SceneDelegate.swift in Sources */,
+				89C65677246AD8100018FA77 /* RoundedButton.swift in Sources */,
 				896E118C246412BA00E55E84 /* Date+Extension.swift in Sources */,
 				8906769624698F2100D788DB /* HealthStore.swift in Sources */,
 				8906769824698F2100D788DB /* HealthViewModel.swift in Sources */,

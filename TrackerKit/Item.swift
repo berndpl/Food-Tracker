@@ -17,7 +17,7 @@ public enum ItemCategory:Int, Codable, CustomStringConvertible {
     public var description: String {
         switch self {
         case .drink: return "🥤"
-        case .sweets: return "🍭"
+        case .sweets: return "🍪"
         case .meal: return "🥪"
         }
     }
@@ -27,6 +27,17 @@ public struct Item:Codable, CustomDebugStringConvertible, Identifiable, Hashable
     public let itemCategory:ItemCategory
     public var createDate:Date
     public let id:UUID = UUID()
+    public var calories:Double {
+        switch itemCategory {
+        case .drink:
+            return 140.0
+        case .sweets:
+            return 230.0
+        case .meal:
+            return 560.0
+        }
+    }
+    public var healthSampleIdentifier:UUID?
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)

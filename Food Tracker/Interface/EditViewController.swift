@@ -14,7 +14,16 @@ class EditViewController:UIViewController {
 
     var item:Item!
     var viewModel:ViewModel!
-        
+    var healthViewModel:HealthViewModel = HealthViewModel()
+    
+    @IBAction func didTapDelete(_ sender: Any) {
+        self.dismiss(animated: true) {
+            self.viewModel.didTapDelete(item: self.item)
+        }
+    }
+    
+    @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var snackLabel: UILabel!
     @IBAction func didChangeValue(_ sender: Any, forEvent event: UIEvent) {
          print("Change \(event)")
     }
@@ -40,7 +49,12 @@ class EditViewController:UIViewController {
         super.viewWillAppear(animated)
         print("-------Edit Will Appear-------")
         print("Selected \(item!)")
-        self.navigationBar.topItem?.title = item.itemCategory.description
+        configure()
+    }
+    
+    func configure() {
+        self.snackLabel.text = item.itemCategory.description
+        self.caloriesLabel.text = Measurement(value: item.calories, unit: UnitEnergy.calories).description
         self.datePicker.setDate(item.createDate, animated: true)
     }
     

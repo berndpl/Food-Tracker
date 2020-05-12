@@ -13,6 +13,7 @@ class TableViewController:UITableViewController {
     var viewModel:ViewModel!
     var healthViewModel:HealthViewModel = HealthViewModel()
 
+    @IBOutlet weak var healthLogLabel: UILabel!
     @IBAction func didToggleHealthLogSwitch(_ sender: Any, forEvent event: UIEvent) {
         healthViewModel.didTapSwitch()
     }
@@ -70,6 +71,11 @@ class TableViewController:UITableViewController {
     
     @objc func shouldReload() {
         viewModel.todayWidgetDidLoad()
+        
+        healthLogLabel.text = healthViewModel.healthLogLabelText()
+        healthLogSwitch.isOn = healthViewModel.healthLogSwitchIsOn()
+        healthLogSwitch.isEnabled = healthViewModel.healthLogSwitchIsEnabled()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,7 +120,7 @@ class TableViewController:UITableViewController {
         if editingStyle == .delete {
             print("Delete \(editingStyle) \(indexPath)")
             viewModel.didTapDeleteItem(section:indexPath.section, item:indexPath.item)
-            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)            
         }
     }
     

@@ -39,6 +39,15 @@ public class ViewModel:NSObject {
         print("After \(state.items.count)")
     }
     
+    public func didTapDelete(item:Item) {
+        print("DELETE BEFORE \(state.items.count)")
+        state.items.removeAll(where: {$0.id == item.id})
+        
+        print("DELETE AFTER \(state.items.count)")
+        Storage.save(state: state)
+        callback(state)
+    }
+    
     public func didTapDeleteItem(section:Int, item:Int) {
         let itemToRemove = selectedItem(section:section, item:item)
         print("Delete Item \(itemToRemove)")
@@ -50,9 +59,27 @@ public class ViewModel:NSObject {
     
     public func didChangeDate(selectedItem:Item, date:Date) {
         print("Change \(selectedItem) Date \(date)")
-        //state.items.filter{ $0.id == selectedItem.id }.first?.createDate = date
+        var newState = state.items
+        for (index, _) in newState!.enumerated() {
+            if newState?[index].id == selectedItem.id {
+                newState?[index].createDate = date
+            }
+        }
+        state.items = newState
+        Storage.save(state: state)
+        callback(state)
     }
     
+    func addHealthSampleUUID(healthSampleIdentifier:UUID, itemToUpdate:Item) {
+        var newState = state.items
+        for (index, _) in newState!.enumerated() {
+            if newState?[index].id == itemToUpdate.id {
+                newState?[index].healthSampleIdentifier = healthSampleIdentifier
+            }
+        }
+        state.items = newState
+        Storage.save(state: state)
+    }
     
     public func selectedItem(section:Int, item:Int)->Item {
         let item = state.items[item]

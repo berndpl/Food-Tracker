@@ -54,3 +54,5 @@ let itemsYesterday = allItems.filter { $0.createDate > $0.createDate.daysFromNow
 itemsYesterday
 //let itemsYesterday = itemsSortedByDate.filter { $0.createDate < $0.createDate.daysFromNow(days: -1) }
 //let earlierItems = itemsSortedByDate.filter { $0.createDate < $0.createDate.daysFromNow(days: -2) }
+
+//self.caloriesLabel.text = Measurement(value: item.calories, unit: UnitEnergy.calories).description

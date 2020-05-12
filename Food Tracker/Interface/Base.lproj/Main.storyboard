@@ -17,9 +17,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HXd-oV-mxC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="116.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                                 <items>
-                                    <navigationItem title="🍭" id="WXo-cm-7Sz">
+                                    <navigationItem id="WXo-cm-7Sz">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="MQR-Uk-LAL">
+                                            <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="didTapDelete:" destination="tri-O6-sfP" id="p2m-qf-4jP"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="h2I-m4-tpQ">
                                             <connections>
                                                 <action selector="didTapDone:" destination="tri-O6-sfP" id="olY-hD-653"/>
@@ -28,29 +34,47 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-3o-s3U">
-                                <rect key="frame" x="0.0" y="156.5" width="414" height="611.5"/>
-                                <connections>
-                                    <action selector="didChangeValue:forEvent:" destination="tri-O6-sfP" eventType="valueChanged" id="YrB-Ys-eaN"/>
-                                </connections>
-                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-jp-5Lw">
+                                <rect key="frame" x="0.0" y="108" width="414" height="420"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥤" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpT-3V-1uI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="143.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 kCal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fct-hc-AY1">
+                                        <rect key="frame" x="0.0" y="163.5" width="414" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-3o-s3U">
+                                        <rect key="frame" x="0.0" y="204" width="414" height="216"/>
+                                        <connections>
+                                            <action selector="didChangeValue:forEvent:" destination="tri-O6-sfP" eventType="valueChanged" id="YrB-Ys-eaN"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yeu-jp-5Lw" secondAttribute="trailing" id="5U1-fW-n7b"/>
+                            <constraint firstItem="yeu-jp-5Lw" firstAttribute="leading" secondItem="m7f-k1-o3R" secondAttribute="leading" id="9JD-O6-wbZ"/>
                             <constraint firstAttribute="trailing" secondItem="HXd-oV-mxC" secondAttribute="trailing" id="Qoq-L2-QDu"/>
                             <constraint firstItem="HXd-oV-mxC" firstAttribute="leading" secondItem="m7f-k1-o3R" secondAttribute="leading" id="UaN-3m-CSb"/>
                             <constraint firstItem="HXd-oV-mxC" firstAttribute="top" secondItem="m7f-k1-o3R" secondAttribute="top" id="jTi-2u-jaM"/>
-                            <constraint firstItem="fEk-3o-s3U" firstAttribute="trailing" secondItem="m7f-k1-o3R" secondAttribute="trailing" id="m6f-OZ-tMF"/>
-                            <constraint firstItem="fEk-3o-s3U" firstAttribute="top" secondItem="HXd-oV-mxC" secondAttribute="bottom" constant="40" id="pLu-7v-i8m"/>
-                            <constraint firstItem="fEk-3o-s3U" firstAttribute="leading" secondItem="m7f-k1-o3R" secondAttribute="leading" id="pp8-hH-dmF"/>
-                            <constraint firstItem="m7f-k1-o3R" firstAttribute="bottom" secondItem="fEk-3o-s3U" secondAttribute="bottom" constant="40" id="vp3-OV-Rsb"/>
+                            <constraint firstItem="yeu-jp-5Lw" firstAttribute="top" secondItem="HXd-oV-mxC" secondAttribute="bottom" id="sHM-wP-5m5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m7f-k1-o3R"/>
                     </view>
                     <navigationItem key="navigationItem" id="VKo-Jt-bbl"/>
                     <connections>
+                        <outlet property="caloriesLabel" destination="fct-hc-AY1" id="ZfB-oX-wbg"/>
                         <outlet property="datePicker" destination="fEk-3o-s3U" id="AUn-52-1jO"/>
                         <outlet property="navigationBar" destination="HXd-oV-mxC" id="4rs-E2-tQd"/>
+                        <outlet property="snackLabel" destination="qpT-3V-1uI" id="EtV-J9-7Dn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMO-Zd-L7D" sceneMemberID="firstResponder"/>
@@ -84,7 +108,7 @@
                                                                 <constraint firstAttribute="width" secondItem="Sf3-sN-dh6" secondAttribute="height" multiplier="1:1" id="mhx-9t-Nta"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                            <state key="normal" title="🍭"/>
+                                                            <state key="normal" title="🍪"/>
                                                             <connections>
                                                                 <action selector="didTapSweets:" destination="Cpc-9w-UGc" eventType="touchUpInside" id="11x-Li-t6J"/>
                                                             </connections>
@@ -118,11 +142,17 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwP-wV-TAU">
                                                     <rect key="frame" x="0.0" y="120" width="382" height="64"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-oP-HiB">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-oP-HiB">
                                                             <rect key="frame" x="16" y="16" width="350" height="32"/>
                                                             <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HealthIcon" translatesAutoresizingMaskIntoConstraints="NO" id="glx-qd-LLB">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="33" height="32"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="33" id="Jz1-Ed-rGj"/>
+                                                                    </constraints>
+                                                                </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log to Health App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-n1-kwq">
-                                                                    <rect key="frame" x="0.0" y="6" width="301" height="20.5"/>
+                                                                    <rect key="frame" x="49" y="6" width="236" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -215,20 +245,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Snacked" id="lpP-Vc-hpC">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Edit" id="4Lh-cF-8XO">
-                                <connections>
-                                    <action selector="didTapEdit:" destination="Cpc-9w-UGc" id="i6w-x3-Kpg"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Delete All" id="P5M-q4-dVG">
-                                <connections>
-                                    <action selector="didTapDeleteAll:" destination="Cpc-9w-UGc" id="QN9-HB-5ki"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="4Lh-cF-8XO">
+                            <connections>
+                                <action selector="didTapEdit:" destination="Cpc-9w-UGc" id="i6w-x3-Kpg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="healthLogLabel" destination="gnL-n1-kwq" id="wfz-wn-8SA"/>
                         <outlet property="healthLogSwitch" destination="uKq-vc-a6h" id="N1Y-uD-bzA"/>
                     </connections>
                 </tableViewController>
@@ -255,4 +279,7 @@
             <point key="canvasLocation" x="1608.6956521739132" y="127.90178571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HealthIcon" width="33" height="33"/>
+    </resources>
 </document>
