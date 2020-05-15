@@ -10,6 +10,35 @@ import UIKit
 
 final class SnackButton: UIButton {
     
+    var primaryColor:UIColor = UIColor.gray
+    var hideCount = true
+    public var descriptionString:String = "" {
+        didSet {
+            descriptionLabel.text = descriptionString
+            descriptionLabel.sizeToFit()
+        }
+    }
+    
+    var editing:Bool = false {
+        didSet {
+            if editing {
+                self.backgroundColor = UIColor.clear
+                self.layer.borderWidth = 2.0
+                self.layer.borderColor = UIColor.systemGray3.cgColor
+                self.badgeView.isHidden = true
+                self.descriptionLabel.isHidden = false
+            } else {
+                self.descriptionLabel.isHidden = true
+                self.backgroundColor = primaryColor
+                self.layer.borderWidth = 0
+                if badgeCount != 0 && hideCount {
+                    self.badgeView.isHidden = false
+                }
+                self.badgeCountLabel.textColor = primaryColor
+            }
+        }
+    }
+    
     override var backgroundColor: UIColor? {
         didSet {
             self.badgeCountLabel.textColor = backgroundColor
@@ -18,13 +47,17 @@ final class SnackButton: UIButton {
     
     var badgeView:UIView = UIView()
     var badgeCountLabel:UILabel = UILabel()
+    var descriptionLabel:UILabel = UILabel()
+    
     public var badgeCount:Int = 0 {
         didSet {
             badgeCountLabel.text = "\(self.badgeCount)"
             if badgeCount == 0 {
                 self.badgeView.isHidden = true
             } else {
-                self.badgeView.isHidden = false
+                if editing == false && hideCount{
+                    self.badgeView.isHidden = false
+                }
             }
         }
     }
@@ -48,7 +81,8 @@ final class SnackButton: UIButton {
     func configure(title:String, count:Int, backgroundColor:UIColor) {
         self.badgeCount = count
         self.setTitle(title, for: .normal)
-        self.backgroundColor = backgroundColor
+        self.backgroundColor = primaryColor
+        self.editing = true
     }
     
     func setup() {
@@ -59,7 +93,6 @@ final class SnackButton: UIButton {
         let badgeSize:CGFloat = 26.0
         let badgeInset:CGFloat = 8.0
         let badgeCornerRadius = badgeSize / 2.0
-        
         let badgePositionX = self.bounds.width - badgeSize - badgeInset
         
         // Badge
@@ -69,11 +102,21 @@ final class SnackButton: UIButton {
         self.badgeView.layer.masksToBounds = true
         
         // Count
-        self.badgeCountLabel.textColor = self.backgroundColor // self.buttonBackgroundColor
+        self.badgeCountLabel.textColor = self.primaryColor // self.buttonBackgroundColor
         badgeCountLabel.font = UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.semibold)
         badgeCountLabel.frame = CGRect(x: 0, y: 0, width: 26, height: 26)
         badgeCountLabel.textAlignment = .center
         self.badgeView.addSubview(badgeCountLabel)
+        
+        // Description
+        //descriptionLabel.text = "2311 Cal"
+        descriptionLabel.isHidden = true
+        descriptionLabel.font = UIFont.systemFont(ofSize: 12.0, weight: UIFont.Weight.medium)
+        descriptionLabel.textColor = UIColor.systemGray
+        descriptionLabel.sizeToFit()
+        descriptionLabel.center = CGPoint(x: self.frame.width/2.0, y: frame.height-descriptionLabel.frame.height-4.0)
+        descriptionLabel.textAlignment = .center
+        self.addSubview(descriptionLabel)
         
         self.addSubview(self.badgeView)
     }

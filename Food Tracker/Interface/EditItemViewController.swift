@@ -9,7 +9,7 @@
 import UIKit
 import TrackerKit
 
-class EditViewController:UIViewController {
+class EditItemViewController:UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
 
     var item:Item!
@@ -41,10 +41,10 @@ class EditViewController:UIViewController {
     override func viewDidLoad() {
         print("Did Load")
         datePicker.addTarget(self, action: #selector(dateDidChange(datePicker:)), for: .valueChanged)
-
     }
     
     @IBOutlet weak var navigationBar: UINavigationBar!
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("-------Edit Will Appear-------")
@@ -53,7 +53,7 @@ class EditViewController:UIViewController {
     }
     
     func configure() {
-        self.snackLabel.text = item.itemCategory.description
+        self.snackLabel.text = item.title
         self.caloriesLabel.text = Measurement(value: item.calories, unit: UnitEnergy.calories).description
         self.datePicker.setDate(item.createDate, animated: true)
     }

@@ -20,17 +20,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var drinkButton: SnackButton!
     
     @IBAction func didTapSweets(_ sender: Any) {
-        viewModel.didTap(itemCategory:ItemCategory.sweets, shouldUpdate: true)
+        viewModel.didTap(preset:viewModel.state.presets[0], shouldUpdate: true)
         healthViewModel.didTapToAdd(itemCategory: .sweets)
     }
     
     @IBAction func didTapMeal(_ sender: Any) {
-        viewModel.didTap(itemCategory:ItemCategory.meal, shouldUpdate: true)
+        viewModel.didTap(preset:viewModel.state.presets[1], shouldUpdate: true)
         healthViewModel.didTapToAdd(itemCategory: .meal)
     }
     
     @IBAction func didTapDrink(_ sender: Any) {
-        viewModel.didTap(itemCategory:ItemCategory.drink, shouldUpdate: true)
+        viewModel.didTap(preset:viewModel.state.presets[2], shouldUpdate: true)
         healthViewModel.didTapToAdd(itemCategory: .drink)
     }
     
@@ -38,10 +38,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         
         viewModel = ViewModel(callback: { [unowned self] state in
-            print(state.count(itemCategory: .sweets))
-            self.sweetsButton.badgeCount = state.count(itemCategory: .sweets)
-            self.drinkButton.badgeCount = state.count(itemCategory: .drink)
-            self.mealButton.badgeCount = state.count(itemCategory: .meal)
+            self.sweetsButton.badgeCount = state.count(title: state.presets[0].title)
+            self.mealButton.badgeCount = state.count(title: state.presets[1].title)
+            self.drinkButton.badgeCount = state.count(title: state.presets[2].title)
+            
+            self.sweetsButton.setTitle(self.viewModel.state.presets[0].title, for: UIControl.State.normal)
+            self.mealButton.setTitle(self.viewModel.state.presets[1].title, for: UIControl.State.normal)
+            self.drinkButton.setTitle(self.viewModel.state.presets[2].title, for: UIControl.State.normal)
         })
         
         print("\(viewModel.state)")

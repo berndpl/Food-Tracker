@@ -12,7 +12,10 @@ import TrackerKit
 class TableViewController:UITableViewController {
     var viewModel:ViewModel!
     var healthViewModel:HealthViewModel = HealthViewModel()
-
+    @IBOutlet weak var sweetsButton: SnackButton!
+    @IBOutlet weak var mealButton: SnackButton!
+    @IBOutlet weak var drinksButton: SnackButton!
+    
     @IBOutlet weak var healthLogLabel: UILabel!
     @IBAction func didToggleHealthLogSwitch(_ sender: Any, forEvent event: UIEvent) {
         healthViewModel.didTapSwitch()
@@ -21,23 +24,45 @@ class TableViewController:UITableViewController {
     @IBOutlet weak var healthLogSwitch: UISwitch!
     
     @IBAction func didTapSweets(_ sender: Any) {
-        print("new \(viewModel.state.items.count)")
-        viewModel.didTap(itemCategory:ItemCategory.sweets, shouldUpdate: false)
-        tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
-        healthViewModel.didTapToAdd(itemCategory: .sweets)
+        if tableView.isEditing {
+            presentEditPreset(preset: viewModel.state.presets[0], viewModel: viewModel)
+        } else {
+            viewModel.didTap(preset:viewModel.state.presets[0] , shouldUpdate: false)
+            tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+            healthViewModel.didTapToAdd(itemCategory: .sweets)
+        }
     }
     
     @IBAction func didTapMeal(_ sender: Any) {
-        viewModel.shouldReload()
-        viewModel.didTap(itemCategory:ItemCategory.meal, shouldUpdate: false)
-        tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
-        healthViewModel.didTapToAdd(itemCategory: .meal)
+        if tableView.isEditing {
+            presentEditPreset(preset: viewModel.state.presets[1], viewModel: viewModel)
+        } else {
+            viewModel.shouldReload()
+            viewModel.didTap(preset:viewModel.state.presets[1] , shouldUpdate: false)
+            tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+            healthViewModel.didTapToAdd(itemCategory: .meal)
+        }
     }
     
     @IBAction func didTapDrink(_ sender: Any) {
-        viewModel.didTap(itemCategory:ItemCategory.drink, shouldUpdate: false)
-        tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
-        healthViewModel.didTapToAdd(itemCategory: .drink)
+        if tableView.isEditing {
+            presentEditPreset(preset: viewModel.state.presets[2], viewModel: viewModel)
+        } else {
+            viewModel.didTap(preset:viewModel.state.presets[2] , shouldUpdate: false)
+            tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
+            healthViewModel.didTapToAdd(itemCategory: .drink)
+        }
+    }
+    
+    func presentEditPreset(preset:Preset, viewModel:ViewModel) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editTypeViewController = storyboard.instantiateViewController(identifier:"EditPresetViewController") as! EditPresetViewController
+        editTypeViewController.viewModel = viewModel
+        editTypeViewController.preset = preset
+        self.present(editTypeViewController, animated: true, completion: {
+            print("ho")
+            editTypeViewController.configure()
+        })
     }
     
     @IBAction func didTapEdit(_ sender: UIBarButtonItem) {
@@ -47,6 +72,9 @@ class TableViewController:UITableViewController {
         } else {
             sender.title = "Edit"
         }
+        sweetsButton.editing = tableView.isEditing
+        mealButton.editing = tableView.isEditing
+        drinksButton.editing = tableView.isEditing
     }
     
     @IBAction func didTapDeleteAll(_ sender: Any) {
@@ -57,10 +85,29 @@ class TableViewController:UITableViewController {
         print("Did Load")
         viewModel = ViewModel(callback: { [unowned self] state in
             print("\(state)")
+            self.sweetsButton.badgeCount = state.count(title: state.presets[0].title)
+            self.mealButton.badgeCount = state.count(title: state.presets[1].title)
+            self.drinksButton.badgeCount = state.count(title: state.presets[2].title)
+            
+            self.sweetsButton.descriptionString = self.viewModel.state.presets[0].caloriesLabel
+            self.mealButton.descriptionString = self.viewModel.state.presets[1].caloriesLabel
+            self.drinksButton.descriptionString = self.viewModel.state.presets[2].caloriesLabel
+            
+            self.sweetsButton.setTitle(self.viewModel.state.presets[0].title, for: UIControl.State.normal)
+            self.mealButton.setTitle(self.viewModel.state.presets[1].title, for: UIControl.State.normal)
+            self.drinksButton.setTitle(self.viewModel.state.presets[2].title, for: UIControl.State.normal)
             self.tableView.reloadData()
         })
         NotificationCenter.default.addObserver(self, selector: #selector(shouldReload), name: UIApplication.willEnterForegroundNotification, object: nil)
             shouldReload()
+        configureButtons()
+    }
+    
+    func configureButtons() {
+        drinksButton.primaryColor = drinksButton.backgroundColor!
+        mealButton.primaryColor = mealButton.backgroundColor!
+        sweetsButton.primaryColor = sweetsButton.backgroundColor!
+        sweetsButton.badgeCount = 0
     }
     
     @IBAction func didTapCheck(_ sender: Any) {
@@ -90,11 +137,8 @@ class TableViewController:UITableViewController {
     // MARK: - Show Entry View Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showEntry" {
-            let entry = segue.destination as! EntryViewController
-            entry.viewModel = viewModel
-        } else if segue.identifier == "showEdit" {
-            let edit = segue.destination as! EditViewController
+         if segue.identifier == "showEdit" {
+            let edit = segue.destination as! EditItemViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow
             let selectedItem = viewModel.selectedItem(section: selectedIndexPath!.section, item: selectedIndexPath!.item)
             edit.viewModel = viewModel
@@ -127,7 +171,7 @@ class TableViewController:UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackedItem", for: indexPath) as! ItemTableViewCell
         let item:Item = viewModel.state.items[indexPath.item] //viewModel.state.items[indexPath.row]
-        cell.itemCategoryLabel.text = ("\(item.itemCategory)")
+        cell.itemCategoryLabel.text = ("\(item.title)")
         cell.dateLabel.text = item.createDate.shortRelativeWithTime
         cell.item = item
         return cell

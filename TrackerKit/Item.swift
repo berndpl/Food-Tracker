@@ -24,19 +24,16 @@ public enum ItemCategory:Int, Codable, CustomStringConvertible {
 }
 
 public struct Item:Codable, CustomDebugStringConvertible, Identifiable, Hashable {
-    public let itemCategory:ItemCategory
+    public var title:String
+    public var calories:Double
+    public var colorLiteral:String
     public var createDate:Date
     public let id:UUID = UUID()
-    public var calories:Double {
-        switch itemCategory {
-        case .drink:
-            return 140.0
-        case .sweets:
-            return 230.0
-        case .meal:
-            return 560.0
-        }
+    
+    public var caloriesLabel:String {
+        return Measurement(value: calories, unit: UnitEnergy.calories).description
     }
+    
     public var healthSampleIdentifier:UUID?
     
     public func hash(into hasher: inout Hasher) {
@@ -46,13 +43,14 @@ public struct Item:Codable, CustomDebugStringConvertible, Identifiable, Hashable
         return lhs.id == rhs.id
     }
     
-    init(itemCategory: ItemCategory,
-        date: Date) {
-        self.itemCategory = itemCategory
+    init(title:String, calories:Double, colorLiteral:String, date: Date) {
+        self.title = title
+        self.calories = calories
+        self.colorLiteral = colorLiteral
         self.createDate = date
     }
     
     public var debugDescription: String {
-        return "\(createDate) \(itemCategory)"
+        return "\(createDate) \(title) \(calories)"
     }
 }

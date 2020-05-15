@@ -11,12 +11,11 @@ import Foundation
 struct key {
     static let appGroup = "group.de.plontsch.food-tracker.shared"
     static let fileName = "items.json"
+    static let fileNamePresets = "presets.json"
     static let log = "healthlog_enabled"
 }
 
 public class Storage {
-    
-    // MARK: - Data
     
     class func filePath()->URL {
         guard let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: key.appGroup) else {
@@ -35,6 +34,12 @@ public class Storage {
         try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
         return URL(fileURLWithPath: path, isDirectory: true)
     }
+    
+    // MARK: - Persist Presets
+    
+    
+    
+    // MARK: - Persist State
     
     public class func save(state:State) {
         // Encode
@@ -68,7 +73,7 @@ public class Storage {
         return nil
     }
     
-    // MARK: - User Default Health Log
+    // MARK: - User Defaults
 
     public class func toggleHealthLog(isEnabled:Bool) {
         UserDefaults(suiteName: key.appGroup)!.set(isEnabled, forKey: key.log)

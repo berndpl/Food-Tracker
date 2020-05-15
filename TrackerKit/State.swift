@@ -10,50 +10,27 @@ import Foundation
 
 public struct State:Codable, CustomDebugStringConvertible {
     public var items:[Item]!
+    public var presets:[Preset]!
     
     public var debugDescription:String {
         return "[State] Items \(items.count)"
-    }
+    }   
     
-    public func countLabel(itemCategory:ItemCategory)->String {
-        let counted = count(itemCategory: itemCategory)
-        return counted == 0 ? "" : "\(counted)"
-    }
-    
-    public func count(itemCategory:ItemCategory)->Int {
+    public func count(title:String)->Int {
         let countedItem = items.filter { (item:Item) -> Bool in
-            let isMatchingCategory = item.itemCategory == itemCategory
+            let isMatchingCategory = item.title == title
             return isMatchingCategory && item.createDate.isToday
         }.count
         return countedItem
     }
-    
-    public func countLabelisHidden(itemCategory:ItemCategory)->Bool {
-        return count(itemCategory: itemCategory) > 0 ? false : true
-    }
 
-    // MARK: - TableView
+    public func countLabel(title:String)->String {
+        let counted = count(title: title)
+        return counted == 0 ? "" : "\(counted)"
+    }
     
-//    public func items()->[[Item]] {
-//        var sections:[[Item]] = [[Item]]()
-//
-//        let itemsSortedByDate = items.sorted { (itemA, itemB) -> Bool in
-//            return itemA.createDate.compare(itemB.createDate) == .orderedDescending
-//        }
-//
-//        let itemsToday = itemsSortedByDate.filter { Calendar.current.isDateInToday($0.createDate) }
-//        let itemsYesterday = itemsSortedByDate.filter { $0.createDate < $0.createDate.daysFromNow(days: -1) }
-//        let earlierItems = itemsSortedByDate.filter { $0.createDate < $0.createDate.daysFromNow(days: -2) }
-//
-//        sections.append(itemsToday)
-//        sections.append(itemsYesterday)
-//        sections.append(earlierItems)
-//
-//        //listItems = ListItems(itemsToday, itemsYesterday, earlierItems)
-//
-//        //sections.append(itemsSortedByDate)
-//
-//        return sections
-//    }
+    public func countLabelisHidden(title:String)->Bool {
+        return count(title: title) > 0 ? false : true
+    }
     
 }

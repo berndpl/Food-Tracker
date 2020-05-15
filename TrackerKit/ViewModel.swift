@@ -11,19 +11,14 @@ import Foundation
 public class ViewModel:NSObject {
     var callback: ((State) -> Void)
     
-    public var state: State = State(items: []) {
-        didSet {
-            print("Callback!")
-            //callback(state)
-        }
-    }
+    public var state: State = State(items: [], presets: defaultPresets())
     
     public init(callback: @escaping (State) -> Void) {
         self.callback = callback
     }
     
-    public func didTap(itemCategory:ItemCategory, shouldUpdate:Bool=true, date:Date=Date()) {
-        addItem(itemCategory: itemCategory)
+    public func didTap(preset:Preset, shouldUpdate:Bool=true, date:Date=Date()) {
+        addItem(preset: preset)
         Storage.save(state: state)
         //shouldReload()
         if shouldUpdate {
@@ -31,9 +26,9 @@ public class ViewModel:NSObject {
         }
     }
     
-    func addItem(itemCategory: ItemCategory) {
+    func addItem(preset: Preset) {
         print("ADD")
-        let newItem = Item(itemCategory: itemCategory, date: Date())
+        let newItem = Item(title: preset.title, calories: preset.calories, colorLiteral: preset.colorLiteral, date: Date())
         print("Before \(state.items.count)")
         state.items.insert(newItem, at: 0)
         print("After \(state.items.count)")
@@ -98,6 +93,19 @@ public class ViewModel:NSObject {
         callback(state)
     }
     
+    public func didUpdatePreset(preset:Preset, title:String, calories:Double) {
+        var updatedPresets = state.presets
+        for (index, _) in state.presets!.enumerated() {
+            if updatedPresets?[index].id == preset.id {
+                updatedPresets?[index].title = title
+                updatedPresets?[index].calories = calories
+            }
+        }
+        state.presets = updatedPresets
+        Storage.save(state: state)
+        callback(state)
+    }
+    
     public func shouldReload() {
            if let savedState = Storage.load() {
                state = savedState
@@ -109,15 +117,25 @@ public class ViewModel:NSObject {
     }
     
     func initialState()->State {
-        let initialState = State(items: [])
+        let initialState = State(items: [], presets: defaultPresets())
         return initialState
     }
     
 }
 
 func allItems()->[Item] {
+    let presets = defaultPresets()
     let allItems:[Item] = [
-        Item(itemCategory:.drink, date:Date()),
-        Item(itemCategory:.meal, date:Date())]
+        Item(title: presets[0].title, calories: presets[0].calories, colorLiteral: presets[0].colorLiteral, date: Date()),
+        Item(title: presets[1].title, calories: presets[1].calories, colorLiteral: presets[1].colorLiteral, date:Date())]
     return allItems
+}
+
+func defaultPresets()->[Preset] {
+    let presets:[Preset] = [
+        Preset(title: "🍪", calories: 230.0, colorLiteral: "systemPink"),
+        Preset(title: "🥪", calories: 560.0, colorLiteral: "systemYellow"),
+        Preset(title: "🥤", calories: 140.0, colorLiteral: "systemPurple")
+    ]
+    return presets
 }
