@@ -35,7 +35,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-jp-5Lw">
-                                <rect key="frame" x="0.0" y="108" width="414" height="420"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="435.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥤" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpT-3V-1uI">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="143.5"/>
@@ -44,13 +44,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 kCal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fct-hc-AY1">
-                                        <rect key="frame" x="0.0" y="163.5" width="414" height="20.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="414" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-3o-s3U">
-                                        <rect key="frame" x="0.0" y="204" width="414" height="216"/>
+                                        <rect key="frame" x="0.0" y="219.5" width="414" height="216"/>
                                         <connections>
                                             <action selector="didChangeValue:forEvent:" destination="tri-O6-sfP" eventType="valueChanged" id="YrB-Ys-eaN"/>
                                         </connections>
@@ -207,17 +206,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mwx-Sw-dCy">
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mwx-Sw-dCy">
                                             <rect key="frame" x="12" y="8" width="346" height="39"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥤" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQG-8i-bek">
-                                                    <rect key="frame" x="0.0" y="0.5" width="169" height="38.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="🥤" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQG-8i-bek">
+                                                    <rect key="frame" x="0.0" y="0.5" width="79.5" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today, 14:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1d-tw-vAT">
-                                                    <rect key="frame" x="177" y="9.5" width="169" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 21, 2003 at Wdnesday, 14:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1d-tw-vAT">
+                                                    <rect key="frame" x="87.5" y="9.5" width="258.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -256,6 +255,7 @@
                         <outlet property="drinksButton" destination="x5W-C6-2mz" id="yhj-gG-S1J"/>
                         <outlet property="healthLogLabel" destination="gnL-n1-kwq" id="wfz-wn-8SA"/>
                         <outlet property="healthLogSwitch" destination="uKq-vc-a6h" id="N1Y-uD-bzA"/>
+                        <outlet property="healthToggleView" destination="UwP-wV-TAU" id="xWJ-uu-WvS"/>
                         <outlet property="mealButton" destination="2I1-nY-fJ1" id="SCY-Bx-wPZ"/>
                         <outlet property="sweetsButton" destination="Sf3-sN-dh6" id="aR2-iJ-txq"/>
                     </connections>
@@ -303,7 +303,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rOo-65-vcF">
-                                <rect key="frame" x="0.0" y="140" width="414" height="187"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="202.5"/>
                                 <subviews>
                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="🍿" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xcX-mY-Arw" customClass="Edit">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
@@ -315,10 +315,9 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120 Cal" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-2V-D5K">
-                                        <rect key="frame" x="0.0" y="165" width="414" height="22"/>
+                                        <rect key="frame" x="0.0" y="165" width="414" height="37.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="caloriesDidChange:" destination="ssj-Wc-4TX" eventType="editingChanged" id="Sh3-cS-SeJ"/>

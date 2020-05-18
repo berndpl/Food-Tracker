@@ -19,6 +19,10 @@ public class HealthViewModel:NSObject {
     let drinksCalories = 140.0
     let mealCalories = 560.0
     
+    public func isHidden()->Bool {
+        return !HKHealthStore.isHealthDataAvailable()
+    }
+    
     public func didTapToAdd(itemCategory:ItemCategory) {
         if Storage.isHealthLogEnabled() {
         switch itemCategory {

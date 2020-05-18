@@ -11,6 +11,8 @@ import TrackerKit
 
 class TableViewController:UITableViewController {
     var viewModel:ViewModel!
+
+    @IBOutlet weak var healthToggleView: UIView!
     var healthViewModel:HealthViewModel = HealthViewModel()
     @IBOutlet weak var sweetsButton: SnackButton!
     @IBOutlet weak var mealButton: SnackButton!
@@ -101,6 +103,7 @@ class TableViewController:UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(shouldReload), name: UIApplication.willEnterForegroundNotification, object: nil)
             shouldReload()
         configureButtons()
+        healthToggleView.isHidden = healthViewModel.isHidden()
     }
     
     func configureButtons() {

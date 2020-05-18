@@ -25,7 +25,7 @@ class EditPresetViewController: UIViewController, UITextFieldDelegate {
     func dismiss() {
         self.dismiss(animated: true) {
             print("Dismissing")
-            //self.viewModel.didUpdatePreset(preset: self.preset, title: self.emojiTextField.text!, calories: 99)
+            //self.viewModel.shouldReload()
         }
     }
     

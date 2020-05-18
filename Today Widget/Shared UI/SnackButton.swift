@@ -22,19 +22,23 @@ final class SnackButton: UIButton {
     var editing:Bool = false {
         didSet {
             if editing {
-                self.backgroundColor = UIColor.clear
-                self.layer.borderWidth = 2.0
-                self.layer.borderColor = UIColor.systemGray3.cgColor
-                self.badgeView.isHidden = true
-                self.descriptionLabel.isHidden = false
-            } else {
-                self.descriptionLabel.isHidden = true
-                self.backgroundColor = primaryColor
-                self.layer.borderWidth = 0
-                if badgeCount != 0 && hideCount {
-                    self.badgeView.isHidden = false
+                UIView.animate(withDuration: 0.2) {
+                    self.backgroundColor = UIColor.systemGray6 //UIColor.clear
+                    //self.layer.borderWidth = 2.0
+                    //self.layer.borderColor = UIColor.systemGray3.cgColor
+                    self.badgeView.isHidden = true
+                    self.descriptionLabel.isHidden = false
                 }
-                self.badgeCountLabel.textColor = primaryColor
+            } else {
+                UIView.animate(withDuration: 0.2) {
+                    self.descriptionLabel.isHidden = true
+                    self.backgroundColor = self.primaryColor
+                    self.layer.borderWidth = 0
+                    if self.badgeCount != 0 && self.hideCount {
+                        self.badgeView.isHidden = false
+                    }
+                    self.badgeCountLabel.textColor = self.primaryColor
+                }
             }
         }
     }
@@ -112,7 +116,7 @@ final class SnackButton: UIButton {
         //descriptionLabel.text = "2311 Cal"
         descriptionLabel.isHidden = true
         descriptionLabel.font = UIFont.systemFont(ofSize: 12.0, weight: UIFont.Weight.medium)
-        descriptionLabel.textColor = UIColor.systemGray
+        descriptionLabel.textColor = UIColor.label
         descriptionLabel.sizeToFit()
         descriptionLabel.center = CGPoint(x: self.frame.width/2.0, y: frame.height-descriptionLabel.frame.height-4.0)
         descriptionLabel.textAlignment = .center
