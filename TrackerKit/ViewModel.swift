@@ -50,6 +50,7 @@ public class ViewModel:NSObject {
         state.items.removeAll(where: {$0.id == itemToRemove.id})
         print("AFTER \(state.items.count)")
         Storage.save(state: state)
+        callback(state)
     }
     
     public func didChangeDate(selectedItem:Item, date:Date) {

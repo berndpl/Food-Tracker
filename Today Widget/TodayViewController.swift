@@ -47,6 +47,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.drinkButton.setTitle(self.viewModel.state.presets[2].title, for: UIControl.State.normal)
         })
         
+        //configureButton()
         print("\(viewModel.state)")
         viewModel.todayWidgetDidLoad()
     }

@@ -29,7 +29,7 @@ class TableViewController:UITableViewController {
         if tableView.isEditing {
             presentEditPreset(preset: viewModel.state.presets[0], viewModel: viewModel)
         } else {
-            viewModel.didTap(preset:viewModel.state.presets[0] , shouldUpdate: false)
+            viewModel.didTap(preset:viewModel.state.presets[0] , shouldUpdate: true)
             tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
             healthViewModel.didTapToAdd(itemCategory: .sweets)
         }
@@ -40,7 +40,7 @@ class TableViewController:UITableViewController {
             presentEditPreset(preset: viewModel.state.presets[1], viewModel: viewModel)
         } else {
             viewModel.shouldReload()
-            viewModel.didTap(preset:viewModel.state.presets[1] , shouldUpdate: false)
+            viewModel.didTap(preset:viewModel.state.presets[1] , shouldUpdate: true)
             tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
             healthViewModel.didTapToAdd(itemCategory: .meal)
         }
@@ -50,7 +50,7 @@ class TableViewController:UITableViewController {
         if tableView.isEditing {
             presentEditPreset(preset: viewModel.state.presets[2], viewModel: viewModel)
         } else {
-            viewModel.didTap(preset:viewModel.state.presets[2] , shouldUpdate: false)
+            viewModel.didTap(preset:viewModel.state.presets[2] , shouldUpdate: true)
             tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
             healthViewModel.didTapToAdd(itemCategory: .drink)
         }
@@ -98,7 +98,6 @@ class TableViewController:UITableViewController {
             self.sweetsButton.setTitle(self.viewModel.state.presets[0].title, for: UIControl.State.normal)
             self.mealButton.setTitle(self.viewModel.state.presets[1].title, for: UIControl.State.normal)
             self.drinksButton.setTitle(self.viewModel.state.presets[2].title, for: UIControl.State.normal)
-            self.tableView.reloadData()
         })
         NotificationCenter.default.addObserver(self, selector: #selector(shouldReload), name: UIApplication.willEnterForegroundNotification, object: nil)
             shouldReload()
@@ -121,11 +120,10 @@ class TableViewController:UITableViewController {
     
     @objc func shouldReload() {
         viewModel.todayWidgetDidLoad()
-        
         healthLogLabel.text = healthViewModel.healthLogLabelText()
         healthLogSwitch.isOn = healthViewModel.healthLogSwitchIsOn()
         healthLogSwitch.isEnabled = healthViewModel.healthLogSwitchIsEnabled()
-        
+        self.tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

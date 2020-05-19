@@ -30,6 +30,7 @@ class EditItemViewController:UIViewController {
     
     @IBAction func didTapDone(_ sender: Any) {
         dismiss()
+        viewModel.shouldReload()
     }
     
     func dismiss() {

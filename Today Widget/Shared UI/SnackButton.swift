@@ -23,7 +23,7 @@ final class SnackButton: UIButton {
         didSet {
             if editing {
                 UIView.animate(withDuration: 0.2) {
-                    self.backgroundColor = UIColor.systemGray6 //UIColor.clear
+                    self.backgroundColor = UIColor.systemGray5 //UIColor.clear
                     //self.layer.borderWidth = 2.0
                     //self.layer.borderColor = UIColor.systemGray3.cgColor
                     self.badgeView.isHidden = true
@@ -106,7 +106,7 @@ final class SnackButton: UIButton {
         self.badgeView.layer.masksToBounds = true
         
         // Count
-        self.badgeCountLabel.textColor = self.primaryColor // self.buttonBackgroundColor
+        self.badgeCountLabel.textColor = self.backgroundColor?.saturated() // satured() // self.buttonBackgroundColor
         badgeCountLabel.font = UIFont.systemFont(ofSize: 17.0, weight: UIFont.Weight.semibold)
         badgeCountLabel.frame = CGRect(x: 0, y: 0, width: 26, height: 26)
         badgeCountLabel.textAlignment = .center
@@ -124,5 +124,31 @@ final class SnackButton: UIButton {
         
         self.addSubview(self.badgeView)
     }
+        
+}
+
+extension UIColor {
+    func darkened()->UIColor {
+        let modifier:CGFloat = 0.8
+        
+        var alpha:CGFloat = 0.0
+        var hue:CGFloat = 0.0
+        var saturation:CGFloat = 0.0
+        var brightness:CGFloat = 0.0
+        
+        self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness * modifier, alpha: alpha)
+    }
     
+    func saturated()->UIColor {
+        let modifier:CGFloat = 2.4
+        
+        var alpha:CGFloat = 0.0
+        var hue:CGFloat = 0.0
+        var saturation:CGFloat = 0.0
+        var brightness:CGFloat = 0.0
+        
+        self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        return UIColor(hue: hue, saturation: saturation * modifier, brightness: brightness, alpha: alpha)
+    }
 }
