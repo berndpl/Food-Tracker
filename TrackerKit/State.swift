@@ -16,6 +16,33 @@ public struct State:Codable, CustomDebugStringConvertible {
         return "[State] Items \(items.count)"
     }   
     
+    func itemsToday()->Int {
+        let itemsToday = items.filter { (item:Item) -> Bool in
+            return item.createDate.isToday
+        }.count
+        return itemsToday
+    }
+    
+    public func itemsAsSections()->[[Item]] {
+        var sections = [[Item]]()
+        
+        let itemsToday = items.filter { (item:Item) -> Bool in
+            return item.createDate.isToday
+        }
+        if itemsToday.count > 0 {
+            sections.append(itemsToday)
+        }
+        
+        let itemsNotToday = items.filter { (item:Item) -> Bool in
+            return !item.createDate.isToday
+        }
+        if itemsNotToday.count > 0 {
+            sections.append(itemsNotToday)
+        }
+        
+        return sections
+    }
+    
     public func count(title:String)->Int {
         let countedItem = items.filter { (item:Item) -> Bool in
             let isMatchingCategory = item.title == title

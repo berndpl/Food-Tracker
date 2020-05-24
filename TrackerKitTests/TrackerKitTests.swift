@@ -23,45 +23,67 @@ class TrackerKitTests: XCTestCase {
 //        }
         //viewModel.state = state
     }
-    
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
     func testItemsInitial() throws {
         XCTAssertEqual(viewModel.state.items.count, 0)
-        XCTAssertEqual(viewModel.state.numberOfSections(), 0)
+        XCTAssertEqual(viewModel.numberOfSections(), 0)
     }
 
+    func drinkPreset()->Preset {
+        return viewModel.state.presets[0] as Preset
+    }
+
+    func mealPreset()->Preset {
+        return viewModel.state.presets[1] as Preset
+    }
+
+    func sweetsPreset()->Preset {
+        return viewModel.state.presets[2] as Preset
+    }
+    
     func testItemsAdded() throws {
-        viewModel.didTap(itemCategory: .drink)
+        
+        viewModel.didTap(preset: drinkPreset())
         XCTAssertEqual(viewModel.state.items.count, 1)
-        XCTAssertEqual(viewModel.state.numberOfSections(), 1)
-        viewModel.didTap(itemCategory: .meal)
-        viewModel.didTap(itemCategory: .sweets)
+        XCTAssertEqual(viewModel.numberOfSections(), 1)
+        viewModel.didTap(preset: mealPreset())
+        viewModel.didTap(preset: sweetsPreset())
         XCTAssertEqual(viewModel.state.items.count, 3)
-        XCTAssertEqual(viewModel.state.numberOfSections(), 1)
+        XCTAssertEqual(viewModel.numberOfSections(), 1)
     }
 
     func testItemsAddedOverTime() throws {
+        // ADD
         let today = Date()
         let yesterday = Date().yesterday()
         let twoWeeksAgo = Date().daysFromNow(days: -14)
         print("today \(today)")
         print("yesterday \(yesterday)")
         print("twoWeeksAgao \(twoWeeksAgo)")
-        viewModel.didTap(itemCategory: .drink, date: today)
+        viewModel.didTap(preset: mealPreset(), date: today)
         XCTAssertEqual(viewModel.state.items.count, 1)
-        XCTAssertEqual(viewModel.state.numberOfSections(), 1)
-        viewModel.didTap(itemCategory: .drink, date: yesterday)
-        viewModel.didTap(itemCategory: .drink, date: twoWeeksAgo)
-        viewModel.didTap(itemCategory: .sweets, date: twoWeeksAgo)
+        XCTAssertEqual(viewModel.numberOfSections(), 1)
+        viewModel.didTap(preset: drinkPreset(), date: yesterday)
+        viewModel.didTap(preset: drinkPreset(), date: twoWeeksAgo)
+        viewModel.didTap(preset: drinkPreset(), date: twoWeeksAgo)
+        XCTAssertEqual(viewModel.state.items.count, 4)
+        XCTAssertEqual(viewModel.numberOfSections(), 2)
+        //print("items as sections \(viewModel.state.itemsAsSections())")
+        
+        // DELETE
+        let lastItem = viewModel.state.items.last!
+        let firstItem = viewModel.state.items.first!
+        print("Delete LAST \(lastItem)")
+        viewModel.didTapDelete(item: lastItem)
         XCTAssertEqual(viewModel.state.items.count, 3)
-        XCTAssertEqual(viewModel.state.numberOfSections(), 3)
+        XCTAssertEqual(viewModel.numberOfSections(), 2)
+        print("- After Delete Sections \(viewModel.state.itemsAsSections())")
+        print("Delete FIRST \(firstItem)")
+        viewModel.didTapDelete(item: firstItem)
+        XCTAssertEqual(viewModel.state.items.count, 2)
+        XCTAssertEqual(viewModel.numberOfSections(), 1)
+        print("- After Delete Sections \(viewModel.state.itemsAsSections())")
+        
     }
     
     func testPerformanceExample() throws {

@@ -41,8 +41,9 @@ class TableViewController:UITableViewController {
         } else {
             viewModel.shouldReload()
             viewModel.didTap(preset:viewModel.state.presets[1] , shouldUpdate: true)
-            tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
             healthViewModel.didTapToAdd(itemCategory: .meal)
+            tableView.insertRows(at: [IndexPath()], with: UITableView.RowAnimation.automatic)
+            //tableView.insertRows(at: [IndexPath(item: 0, section: 0)], with: UITableView.RowAnimation.automatic)
         }
     }
     
@@ -150,11 +151,11 @@ class TableViewController:UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return viewModel.numberOfSections()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.state.items.count
+        return viewModel.numberOfRowsInSection(section:section)
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -165,13 +166,13 @@ class TableViewController:UITableViewController {
         if editingStyle == .delete {
             print("Delete \(editingStyle) \(indexPath)")
             viewModel.didTapDeleteItem(section:indexPath.section, item:indexPath.item)
-            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)            
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackedItem", for: indexPath) as! ItemTableViewCell
-        let item:Item = viewModel.state.items[indexPath.item] //viewModel.state.items[indexPath.row]
+        let item:Item = viewModel.itemForIndexPath(section: indexPath.section, row: indexPath.row) //state.items [indexPath.item] //viewModel.state.items[indexPath.row]
         cell.itemCategoryLabel.text = ("\(item.title)")
         cell.dateLabel.text = item.createDate.shortRelativeWithTime
         cell.item = item

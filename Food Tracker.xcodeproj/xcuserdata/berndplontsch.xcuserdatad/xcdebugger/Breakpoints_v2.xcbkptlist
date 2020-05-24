@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6EC650DC-8EC9-4E19-9977-F4D413756E17"
+            uuid = "EE052B2A-741E-4F6F-8521-9243E0BD6C7D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrackerKitTests/TrackerKitTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "testItemsAddedOverTime()"
             landmarkType = "7">
          </BreakpointContent>

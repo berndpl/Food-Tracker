@@ -18,7 +18,7 @@ public class ViewModel:NSObject {
     }
     
     public func didTap(preset:Preset, shouldUpdate:Bool=true, date:Date=Date()) {
-        addItem(preset: preset)
+        addItem(preset: preset, date: date)
         Storage.save(state: state)
         //shouldReload()
         if shouldUpdate {
@@ -26,12 +26,10 @@ public class ViewModel:NSObject {
         }
     }
     
-    func addItem(preset: Preset) {
-        print("ADD")
-        let newItem = Item(title: preset.title, calories: preset.calories, colorLiteral: preset.colorLiteral, date: Date())
-        print("Before \(state.items.count)")
+    func addItem(preset: Preset, date:Date=Date()) {
+        let newItem = Item(title: preset.title, calories: preset.calories, colorLiteral: preset.colorLiteral, date: date)
         state.items.insert(newItem, at: 0)
-        print("After \(state.items.count)")
+        Storage.save(state: state)
     }
     
     public func didTapDelete(item:Item) {
@@ -120,6 +118,21 @@ public class ViewModel:NSObject {
     func initialState()->State {
         let initialState = State(items: [], presets: defaultPresets())
         return initialState
+    }
+    
+    // MARK: - Table View
+    
+    public func numberOfSections()->Int {
+        return state.itemsAsSections().count
+    }
+    
+    public func numberOfRowsInSection(section:Int)->Int {
+        print("Section \(section)")
+        return state.itemsAsSections()[section].count
+    }
+    
+    public func itemForIndexPath(section:Int, row:Int)->Item {
+        return state.itemsAsSections()[section][row]
     }
     
 }
