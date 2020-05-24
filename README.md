@@ -1,6 +1,6 @@
 # Snacked
 
-_Guilt free dietary tracking_
+_Judgement free dietary tracking_
 
 A light weight approach on tracking your consumption of unhealthy food. Become aware of how much you consume without being judged. Adding tracked food types isn’t connected t a diet or advice. It’s about awareness, first. Helping you reflect and draw your own conclusions.
 
